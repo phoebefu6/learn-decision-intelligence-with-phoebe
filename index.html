@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions on the judgment layer: decisions before data, your own calibration measured live, superforecasting habits with honest citations, uncertainty you can promise, value of information, and communication that keeps trust. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Decision Intelligence with Phoebe">
+<meta property="og:description" content="Decisions first, data second - with a lab that measures YOUR calibration live.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Decision Intelligence with Phoebe">
+<meta name="twitter:description" content="Decisions first, data second - with a lab that measures YOUR calibration live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Decision Intelligence with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(134,25,143,.14); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#FDF4FF); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Data Science</div>
+    <h1>Learn <span class="accent">Decision Intelligence</span> with Phoebe</h1>
+    <p class="sub">The judgment layer your models feed: decisions committed before data (or the data merely decorates), your own calibration measured live against verified facts (most first-timers claiming 90 percent hit 40 to 60), the forecasting habits that won the largest tournament ever run - taught with the citations everyone else garbles - the value-of-information math that cancels analyses politely, and the communication form the evidence says barely costs trust. One artifact grows across all six sessions: a decision memo your team can actually run.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="90">90</b><span>% claimed - the lab measures the truth</span></div>
+      <div class="stat"><b>0.<span data-count="171">171</span></b><span>the base-rate bot's Brier to beat</span></div>
+      <div class="stat"><b>$<span data-count="3">3</span>.6k</b><span>what the $5k study is worth</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🎯 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· one decision memo, built across all of them</span></h2>
+      <p class="plede">Bring a live decision from your own week in session 1. Each session fills one memo section; session 6 delivers the finished memo and freezes the metric that will judge it.</p>
+    </div>
+
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-decisions-first.html" style="--diff:#34D399">
+        <span class="cicon">🧭</span>
+        <span class="cnum">Session 1 · easy</span>
+        <h3>Decisions first</h3>
+        <p>Commit to the default up front, criteria before data, and the six-word question that separates decision-makers from decoration - the Kozyrkov discipline, quoted at source.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-the-calibration-lab.html" style="--diff:#FBBF24">
+        <span class="cicon">🎚️</span>
+        <span class="cnum">Session 2 · medium</span>
+        <h3>The calibration lab</h3>
+        <p>Ten questions, verified answers, your own 90 percent intervals scored live. The number stings, the skill trains, and the memo starts carrying honest estimates.</p>
+        <span class="meta"><span class="pill amber">🔬 measures YOU</span></span>
+      </a>
+      <a class="course-card" href="courses/03-superforecasting-habits.html" style="--diff:#FBBF24">
+        <span class="cicon">🦊</span>
+        <span class="cnum">Session 3 · medium</span>
+        <h3>Superforecasting habits</h3>
+        <p>Base rates before case details, small frequent updates, the chimp line taught with its author's own correction - then the forecast game, where a base-rate bot is humblingly hard to beat.</p>
+        <span class="meta"><span class="pill">the Tetlock canon</span></span>
+      </a>
+      <a class="course-card" href="courses/04-uncertainty-you-can-promise.html" style="--diff:#FB923C">
+        <span class="cicon">📏</span>
+        <span class="cnum">Session 4 · hands-on</span>
+        <h3>Uncertainty you can promise</h3>
+        <p>From vibes to guarantees: calibration curves, and conformal prediction's distribution-free coverage - with the marginal-not-conditional fine print stated plainly.</p>
+        <span class="meta"><span class="pill">the guarantee</span></span>
+      </a>
+      <a class="course-card" href="courses/05-value-of-information.html" style="--diff:#FB923C">
+        <span class="cicon">💰</span>
+        <span class="cnum">Session 5 · hands-on</span>
+        <h3>Value of information</h3>
+        <p>Howard's EVPI live in a calculator: the $5k study worth at most $3.6k, the measurement inversion, and how to cancel an analysis with arithmetic instead of politics.</p>
+        <span class="meta"><span class="pill amber">🧮 live calculator</span></span>
+      </a>
+      <a class="course-card" href="courses/06-decide-and-communicate.html" style="--diff:#F87171">
+        <span class="cicon">📨</span>
+        <span class="cnum">Session 6 · capstone</span>
+        <h3>Decide and communicate</h3>
+        <p>The finished memo: uncertainty stated as ranges (nearly trust-neutral, per the PNAS evidence), the judging metric Goodhart-proofed four ways, the verdict delivered.</p>
+        <span class="meta"><span class="pill amber">🔒 the memo ships</span></span>
+      </a>
+    </div>
+
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium</span>
+      <span><i style="background:#FB923C"></i>hands-on</span>
+      <span><i style="background:#F87171"></i>capstone</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same discipline: the decision, not the analysis, is the unit of work.</p>
+      <div class="path"><b>💼 I sign off on decisions</b>
+        <a class="pstep" href="courses/01-decisions-first.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-value-of-information.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-decide-and-communicate.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">the ordering, the pricing, the delivery</span>
+      </div>
+      <div class="path"><b>📈 My estimates feed the decisions</b>
+        <a class="pstep" href="courses/02-the-calibration-lab.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-superforecasting-habits.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-uncertainty-you-can-promise.html">4</a>
+        <span style="font-size:.82rem;color:var(--muted)">calibrate, forecast, guarantee - the estimator's gym</span>
+      </div>
+      <div class="path"><b>🎯 The whole journey</b>
+        <a class="pstep" href="courses/01-decisions-first.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-the-calibration-lab.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-superforecasting-habits.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-uncertainty-you-can-promise.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-value-of-information.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-decide-and-communicate.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">from data-inspired theater to a memo you can defend</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is real here 🧾</h2>
+      <p class="plede">A course about calibrated claims has to calibrate its own.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>The calibration lab</td><td>Measures YOU - real hit-rate arithmetic on your own intervals against ten facts, each verified to a cited source that reveals on scoring. No simulation anywhere in it</td></tr>
+      <tr><td>The forecast game</td><td>Twelve synthetic scenarios with seeded outcomes, stated on the widget; every Brier number is real arithmetic - yours and both baseline bots (coin-flip 0.250, base-rate 0.171)</td></tr>
+      <tr><td>The value-of-information calculator</td><td>Pure live math - change any number and everything recomputes; the do-not-buy verdict at the preset is arithmetic, not opinion</td></tr>
+      <tr><td>The dart-throwing chimpanzee</td><td>Quoted WITH Tetlock's own correction: average experts, long-range questions, "'Many' does not equal all" - the garbled version is named and retired</td></tr>
+      <tr><td>"Superforecasters beat analysts with classified data by 30%"</td><td>Deliberately not taught as fact - press-sourced, unpublished, aggregation-confounded; the honest version is on the session 3 page</td></tr>
+      <tr><td>The training result</td><td>Stated precisely: a ~45-minute module (not "one hour"), with benefits lasting 8-10 month periods, per the tournament paper read in full text</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-decision-intelligence-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Pairs with <a href="https://phoebefu6.github.io/learn-model-evaluation-with-phoebe/">Model Evaluation ↗</a> · source map: <span class="mono">materials/official-course-map.md</span></span>
+  </footer>
+
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  "title": "Learn Decision\nIntelligence",
+  "centerColor": "#701A75",
+  "sessions": [
+    {
+      "label": "Decisions\nfirst",
+      "href": "courses/01-decisions-first.html",
+      "color": "#34D399",
+      "concepts": [
+        { "label": "Default up front", "href": "courses/01-decisions-first.html" },
+        { "label": "Criteria before data", "href": "courses/01-decisions-first.html" },
+        { "label": "The six-word question", "href": "courses/01-decisions-first.html" }
+      ]
+    },
+    {
+      "label": "The calibration\nlab",
+      "href": "courses/02-the-calibration-lab.html",
+      "color": "#FBBF24",
+      "concepts": [
+        { "label": "Your 90, measured", "href": "courses/02-the-calibration-lab.html" },
+        { "label": "Half-Brier anatomy", "href": "courses/02-the-calibration-lab.html" },
+        { "label": "Width is honesty", "href": "courses/02-the-calibration-lab.html" }
+      ]
+    },
+    {
+      "label": "Superforecasting\nhabits",
+      "href": "courses/03-superforecasting-habits.html",
+      "color": "#FBBF24",
+      "concepts": [
+        { "label": "The chimp, corrected", "href": "courses/03-superforecasting-habits.html" },
+        { "label": "Base rates first", "href": "courses/03-superforecasting-habits.html" },
+        { "label": "Beat the base-rate bot", "href": "courses/03-superforecasting-habits.html" }
+      ]
+    },
+    {
+      "label": "Uncertainty you\ncan promise",
+      "href": "courses/04-uncertainty-you-can-promise.html",
+      "color": "#FB923C",
+      "concepts": [
+        { "label": "Calibration curves", "href": "courses/04-uncertainty-you-can-promise.html" },
+        { "label": "Conformal coverage", "href": "courses/04-uncertainty-you-can-promise.html" },
+        { "label": "The fine print", "href": "courses/04-uncertainty-you-can-promise.html" }
+      ]
+    },
+    {
+      "label": "Value of\ninformation",
+      "href": "courses/05-value-of-information.html",
+      "color": "#FB923C",
+      "concepts": [
+        { "label": "EVPI, live", "href": "courses/05-value-of-information.html" },
+        { "label": "The $3.6k ceiling", "href": "courses/05-value-of-information.html" },
+        { "label": "Measurement inversion", "href": "courses/05-value-of-information.html" }
+      ]
+    },
+    {
+      "label": "Decide and\ncommunicate",
+      "href": "courses/06-decide-and-communicate.html",
+      "color": "#F87171",
+      "concepts": [
+        { "label": "Ranges, not hedges", "href": "courses/06-decide-and-communicate.html" },
+        { "label": "Four Goodharts", "href": "courses/06-decide-and-communicate.html" },
+        { "label": "The memo ships", "href": "courses/06-decide-and-communicate.html" }
+      ]
+    }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

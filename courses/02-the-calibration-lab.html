@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 2 of 6. The calibration lab: ten questions, verified answers, your own 90% intervals scored live. Untrained estimators typically hit 40-60% - and calibration is a trainable skill with a measured payoff.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The calibration lab - learn decision intelligence with phoebe">
+<meta property="og:description" content="Session 2 of 6. Your own 90% intervals, scored live against verified facts. Bring humility.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/courses/02-the-calibration-lab.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The calibration lab - learn decision intelligence with phoebe">
+<meta name="twitter:description" content="Session 2 of 6. Your own 90% intervals, scored live against verified facts.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 2 · The calibration lab - learn decision intelligence with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-decision-intelligence-with-phoebe</a> / Session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Decision Intelligence with Phoebe · Session 2 of 6</div>
+    <h1>The calibration <span class="accent">lab</span></h1>
+    <p class="sub">The memo's estimates section wants numbers with honest uncertainty attached - and before you write any, tonight measures what your "90 percent sure" is actually worth. Ten questions, verified answers, your own hit rate computed in front of you. Across four decades of calibration research, untrained estimators asked for 90 percent intervals capture the truth somewhere between 40 and 60 percent of the time. The good news is the second half of the session: calibration is one of the most reliably trainable skills in the entire judgment literature.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Everyone who wrote a memo in session 1</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The overconfidence evidence</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the lab, scored live</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where session 1 left you</h2>
+    </div>
+    <p class="lede">Your memo has a default and a flip-condition: "launch IF expected net gain exceeds $4k under our own estimates." The phrase doing the load-bearing is <strong>our own estimates</strong> - and an estimate from an uncalibrated estimator is a confident-sounding unknown. Tonight instruments the estimator: you.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> Your own measured calibration number - the single most useful uncomfortable fact this course produces. The half-Brier scoring rule that makes "good forecast" a computable property. And the width-is-honesty discipline that turns estimates into things a memo can actually use.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What calibration means, precisely<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You are calibrated when your stated confidence matches your long-run hit rate: of all the things you call "90 percent sure", about 90 percent turn out true. Not smarter, not more certain - <strong>matched</strong>. A calibrated person's "60 percent" and "95 percent" are different, reliable products; an uncalibrated person's numbers are mood wearing digits.</p>
+        <p>The property is checkable, which is what makes it a skill rather than a personality trait. Tonight's lab checks it the standard way: many interval estimates, verified answers, count the hits.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>Mango Lane's ops lead estimated the checkout revamp at "six weeks, definitely" - it took eleven. The same lead's "risky, maybe 50-50" migration shipped clean. Neither surprised anyone who had counted: the lead's confident estimates run late about half the time. That count is calibration measurement, done informally - tonight just does it honestly, on you, with receipts.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the evidence</span>
+      <h2>The overconfidence result, with its receipts</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">The claim "people are overconfident" is folk wisdom; the measured version has a shape, a size, and a fix. Three layers of evidence, each characterized honestly - because a course about calibrated claims has to calibrate its own.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart: 90 percent claimed confidence, typical untrained hit rates of 40 to 60 percent, and near 90 percent after calibration training">
+        <style>
+          .d2aL { font: 600 12px Inter, sans-serif; fill: #111827; }
+          .d2aV { font: 800 12px Inter, sans-serif; fill: #fff; }
+          .d2aK { font: 800 12px Inter, sans-serif; fill: #111827; }
+          .d2aN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .d2aT { font: 700 11px Inter, sans-serif; fill: #6B7280; letter-spacing: .05em; }
+        </style>
+        <text class="d2aT" x="60" y="42">WHAT "90% CONFIDENT" INTERVALS ACTUALLY CAPTURE · THE CALIBRATION LITERATURE'S HEADLINE</text>
+        <line x1="80" y1="64" x2="80" y2="250" stroke="#D1D5DB" stroke-width="1.5"/>
+        <line x1="80" y1="250" x2="820" y2="250" stroke="#D1D5DB" stroke-width="1.5"/>
+        <line x1="80" y1="82" x2="820" y2="82" stroke="#86198F" stroke-width="2" stroke-dasharray="6 4"/>
+        <text class="d2aK" x="810" y="74" text-anchor="end" fill="#86198F" style="fill:#86198F">the claim: 90%</text>
+        <rect x="140" y="82" width="150" height="168" rx="8" fill="#701A75"/>
+        <text class="d2aV" x="215" y="110" text-anchor="middle">claimed: 90%</text>
+        <text class="d2aL" x="215" y="280" text-anchor="middle">what people say</text>
+        <rect x="370" y="152" width="150" height="98" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="d2aK" x="445" y="142" text-anchor="middle" fill="#991B1B" style="fill:#991B1B">typical: 40-60%</text>
+        <text class="d2aL" x="445" y="280" text-anchor="middle">untrained hit rate</text>
+        <rect x="600" y="90" width="150" height="160" rx="8" fill="#C026D3"/>
+        <text class="d2aV" x="675" y="118" text-anchor="middle">after training: ~90%</text>
+        <text class="d2aL" x="675" y="280" text-anchor="middle">with feedback practice</text>
+        <text class="d2aN" x="60" y="318">The gap between bar one and bar two is overconfidence, measured. The gap between two and three is why this</text>
+        <text class="d2aN" x="60" y="338">session exists: the fix is practice with scoring, and it works on most people within hours.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - claimed, actual, and trained: the three bars this session lives in</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three layers of evidence, each labeled honestly<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The peer-reviewed anchor.</strong> Lichtenstein, Fischhoff and Phillips' 1982 review "Calibration of probabilities: The state of the art to 1980" - the classic synthesis in the Kahneman-Slovic-Tversky volume - documented pervasive overconfidence in interval estimates across studies and populations. This is the load-bearing citation.</li>
+          <li><strong>The practitioner numbers.</strong> Douglas Hubbard's How to Measure Anything reports untrained subjects capturing the truth in some studies only about half the time on claimed-90% intervals, approaching 90 after calibration practice; his training deck states that "a small amount of training (three hours) can significantly improve calibration of estimates". Honest label: these are his workshop data plus his reading of the literature, not a peer-reviewed evaluation of his method - useful, vivid, and characterized as exactly what they are.</li>
+          <li><strong>The tournament-grade result.</strong> In the largest forecasting tournament ever run, a probabilistic-reasoning module - about 45 minutes, teaching reference classes and bias correction - measurably improved forecasters' accuracy, with benefits lasting across periods of 8 to 10 months. Session 3 gives that study its full treatment.</li>
+        </ul>
+        <div class="callout tip">
+          <p><strong>Why the range 40-60 and never a single number.</strong> Untrained hit rates vary by study and population. A course that said "exactly 50 percent" would be committing the very sin it teaches against: false precision where the honest statement is an interval. The claim's own uncertainty, stated - practice what session 6 preaches.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The half-Brier score: making "good forecast" computable<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Glenn Brier's 1950 rule scores a probability forecast against what happened: squared error between the stated probability and the 0-or-1 outcome. This course uses the modern <strong>half-Brier</strong> convention throughout - one squared term, range 0 to 1 - rather than Brier's original category-summed version, whose binary range is 0 to 2. Same idea, half the number; worth knowing both exist because the tournament literature uses the original.</p>
+        <table class="clean">
+          <tr><th>You said</th><th>It happened?</th><th>Half-Brier</th><th>Reading</th></tr>
+          <tr><td>90%</td><td>yes</td><td>(0.9 - 1)^2 = <strong>0.01</strong></td><td>confident and right: nearly free</td></tr>
+          <tr><td>90%</td><td>no</td><td>(0.9 - 0)^2 = <strong>0.81</strong></td><td>confident and wrong: brutal</td></tr>
+          <tr><td>50%</td><td>either</td><td><strong>0.25</strong></td><td>the coin-flip floor - shrug quantified</td></tr>
+          <tr><td>60%</td><td>yes</td><td><strong>0.16</strong></td><td>mild lean, mildly rewarded</td></tr>
+        </table>
+        <p>Two properties make it the standard. It is <strong>proper</strong>: your expected score is best when you report what you truly believe - hedging and bravado both cost. And its asymmetry is the calibration lesson in one row: being 90-and-wrong costs 81 times being 90-and-right. Confidence is a loan against reality, at interest.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1B ============ -->
+  <section class="section" id="part-1b">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the scoring rule</span>
+      <h2>The half-Brier scale, at a glance</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">Before the lab scores you, know the ruler. One picture holds the whole scoring rule and its moral.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The half-Brier scale from 0 to 1: confident-and-right scores 0.01, a coin flip scores 0.25, confident-and-wrong scores 0.81">
+        <style>
+          .d2cL { font: 600 12px Inter, sans-serif; fill: #111827; }
+          .d2cV { font: 800 13px Inter, sans-serif; fill: #111827; }
+          .d2cW { font: 800 12px Inter, sans-serif; fill: #fff; }
+          .d2cN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .d2cT { font: 700 11px Inter, sans-serif; fill: #6B7280; letter-spacing: .05em; }
+        </style>
+        <text class="d2cT" x="60" y="42">THE HALF-BRIER SCALE · SQUARED ERROR BETWEEN YOUR PROBABILITY AND WHAT HAPPENED · LOWER IS BETTER</text>
+        <rect x="80" y="90" width="720" height="16" rx="8" fill="#F0ABFC"/>
+        <rect x="80" y="90" width="180" height="16" rx="8" fill="#701A75"/>
+        <text class="d2cL" x="80" y="76">0 · perfect</text>
+        <text class="d2cL" x="800" y="76" text-anchor="end">1 · perfectly wrong</text>
+        <circle cx="88" cy="98" r="10" fill="#701A75"/>
+        <text class="d2cV" x="88" y="140" text-anchor="middle">0.01</text>
+        <text class="d2cL" x="88" y="162" text-anchor="middle">90%, right</text>
+        <circle cx="260" cy="98" r="10" fill="#C026D3"/>
+        <text class="d2cV" x="260" y="140" text-anchor="middle">0.25</text>
+        <text class="d2cL" x="260" y="162" text-anchor="middle">the coin-flip floor</text>
+        <circle cx="663" cy="98" r="10" fill="#991B1B"/>
+        <text class="d2cV" x="663" y="140" text-anchor="middle" fill="#991B1B" style="fill:#991B1B">0.81</text>
+        <text class="d2cL" x="663" y="162" text-anchor="middle">90%, wrong</text>
+        <rect x="80" y="196" width="720" height="40" rx="10" fill="#FDF4FF"/>
+        <text class="d2cV" x="440" y="221" text-anchor="middle">Confident-and-wrong costs 81 times confident-and-right. Confidence is a loan against reality, at interest.</text>
+        <text class="d2cN" x="60" y="272">Proper scoring rule: your expected score is best when you report what you truly believe - hedging and bravado both lose.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the ruler the forecast game will score you with</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>The lab: your number, measured live</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Ten questions below, spanning mountains to physics. For each, enter a range you are 90 percent sure contains the true answer. The discipline that matters: answer ALL ten, including the ones you know nothing about - cluelessness is not an excuse, it is a signal to widen. Then press score.</p>
+
+    <div id="di-calibrate"></div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Answer all ten before scoring - no lookups, no skipping the scary ones.</strong> A skipped question is the estimator refusing to be measured, which is exactly the behavior that keeps organizations uncalibrated. Wide honest ranges on unfamiliar questions are correct technique, not weakness.</p></div>
+      <div class="step"><p><strong>Press score and sit with your number for ten seconds before rationalizing.</strong> If you claimed 90 and hit 4 or 5 of 10, your "90 percent sure" is currently a coin flip wearing a suit - and you are in the statistical company of nearly everyone untrained. The number is a baseline, not a verdict.</p></div>
+      <div class="step"><p><strong>Read your misses' pattern.</strong> Most first-timers miss the same way: ranges anchored on a half-remembered number, then narrowed to sound knowledgeable. The reveal links show each true value's source - including one whose "true value" carries its own error bar, which is tonight's bonus lesson about the world.</p></div>
+      <div class="step"><p><strong>Apply the equivalent-bet test to your three narrowest ranges.</strong> For each: would you genuinely bet $9 to win $1 that the truth is inside? That is what 90 percent means. If your stomach says no, your range was performance, not probability - widen until the bet feels fair.</p></div>
+      <div class="step"><p><strong>Now write the memo's section 3, with technique.</strong> The voucher decision needs two estimates: campaign uptake rate and per-customer retained value. Write each as a 90 percent interval using tonight's discipline - anchored wide, narrowed only by actual knowledge. Label each "from an estimator measured at N percent tonight" - the memo carries your calibration number as metadata, which is what honest estimates look like.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>The retake rule.</strong> Calibration training is feedback plus repetition: retake the lab in a week (the answers will have faded), and track your number across attempts. Hubbard's workshops report most people approaching 90 within hours of this exact loop. The lab stays here; the skill compounds.</p>
+    </div>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers width as honesty</span>
+      <h2>The width of an interval is a statement of knowledge</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The lab exposes the core confusion overconfidence feeds on: treating narrow ranges as competence. The truth runs the other way - the width IS the information.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three estimators compared: narrow and wrong misses the true value, wide and honest contains it, and calibrated-narrow contains it with genuine knowledge">
+        <style>
+          .d2bL { font: 600 12px Inter, sans-serif; fill: #111827; }
+          .d2bR { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .d2bG { font: 700 11px Inter, sans-serif; fill: #701A75; }
+          .d2bN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+          .d2bT { font: 700 11px Inter, sans-serif; fill: #6B7280; letter-spacing: .05em; }
+        </style>
+        <text class="d2bT" x="60" y="42">THREE ESTIMATES OF THE SAME QUANTITY · THE VERTICAL LINE IS THE TRUTH</text>
+        <line x1="560" y1="60" x2="560" y2="260" stroke="#111827" stroke-width="2.5"/>
+        <text class="d2bL" x="560" y="285" text-anchor="middle">true value</text>
+        <text class="d2bL" x="80" y="98">"Expert" - narrow, confident</text>
+        <rect x="300" y="84" width="120" height="18" rx="9" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="d2bR" x="700" y="98">missed - yet sounded best</text>
+        <text class="d2bL" x="80" y="168">Honest novice - wide</text>
+        <rect x="260" y="154" width="440" height="18" rx="9" fill="#F0ABFC"/>
+        <text class="d2bG" x="720" y="168">contains the truth</text>
+        <text class="d2bL" x="80" y="238">Calibrated expert - narrow AND right</text>
+        <rect x="480" y="224" width="150" height="18" rx="9" fill="#86198F"/>
+        <text class="d2bG" x="700" y="238">narrow EARNED by knowledge</text>
+        <text class="d2bN" x="60" y="312">Narrowness is only impressive when the hit rate backs it. The first estimator's real product was confidence theater -</text>
+        <text class="d2bN" x="60" y="332">and only counting, never charisma, distinguishes row one from row three.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - width is honesty; narrowness must be earned by hit rate</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading intervals in the wild, starting tomorrow<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Once you hold the width-is-honesty frame, meetings change. Three habits worth installing:</p>
+        <ul>
+          <li><strong>Ask for the interval, not the number.</strong> "Six weeks" becomes "four to eleven weeks, 90 percent" - and suddenly the plan has contingency where the false precision used to be. A point estimate is an interval with its honesty amputated.</li>
+          <li><strong>Track hit rates, not vibes.</strong> The colleague whose "definitely" runs 50-50 and the quiet one whose ranges always contain the truth - only counting reveals which is which. A simple log of stated intervals versus outcomes is a team calibration lab, free.</li>
+          <li><strong>Reward the wide-and-right over the narrow-and-wrong.</strong> Most orgs do the opposite: confidence gets the promotion, honesty gets "why so vague". The Brier asymmetry - 0.81 versus 0.01 - is the argument to bring: confident-and-wrong is not near-right, it is the worst score on the board.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>The Challenger Deep question in tonight's lab hides the deepest lesson: the 2021 survey's own answer carries a plus-minus 6 meter error bar, and other modern surveys differ by tens of meters. Even "the true value" is an interval when you look closely enough. An estimator uncomfortable with width is uncomfortable with how knowledge actually works.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the lab works: the feedback loop that trains calibration<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Calibration training is unusually reliable for a cognitive skill, and the mechanism is mundane: <strong>scored repetition with immediate feedback</strong>. Everyday life never provides it - your confident claims are rarely checked, and the checks arrive too late to attribute. The lab compresses the loop to seconds.</p>
+        <ul>
+          <li><strong>Repetition:</strong> many estimates, so the hit rate is a real frequency rather than an anecdote.</li>
+          <li><strong>Verified feedback:</strong> every reveal carries its source - no arguing with the answer key.</li>
+          <li><strong>The equivalent bet:</strong> converting "90 percent sure" into "bet $9 to win $1" recruits the part of your judgment that handles stakes honestly - Hubbard's most portable trick.</li>
+          <li><strong>Spaced retakes:</strong> the training literature's durability finding - effects lasting months from under an hour of practice - is the reason the retake rule exists.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Retake the lab in three days.</strong> Log both numbers. One retake is worth more than this entire page reread twice.</li>
+      <li><strong>Make ten work estimates as 90 percent intervals</strong> - ticket counts, delivery dates, metric values you will learn next week. Score them as answers arrive. This is your personal calibration log, started.</li>
+      <li><strong>Run the equivalent-bet test in one real meeting.</strong> When someone says "90 percent sure", ask - kindly - whether they would take the $9-to-win-$1 bet. Watch the range widen in real time.</li>
+      <li><strong>Compute three half-Brier scores by hand</strong> from your own week: one confident-right, one confident-wrong, one honest 50. Feel the 0.01 / 0.81 / 0.25 asymmetry once with your own events.</li>
+      <li><strong>Optional:</strong> read Hubbard's chapter 5 on calibrated estimates - the equivalent-bet test and the pro-con technique in full.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · What does the calibration literature actually say about untrained people's "90 percent confidence intervals"?</p>
+      <button class="qopt" type="button">A · They capture the truth exactly 50 percent of the time - a universal constant of psychology</button>
+      <button class="qopt" type="button">B · They capture the truth about 90 percent of the time - people are naturally calibrated</button>
+      <button class="qopt" type="button">C · They typically capture the truth 40 to 60 percent of the time, varying by study and population - with the peer-reviewed anchor in the 1982 Lichtenstein-Fischhoff-Phillips review and vivid workshop numbers from Hubbard, characterized as workshop data</button>
+      <p class="qwhy">The range matters twice: it is what the evidence says, and stating a range instead of a false constant is the course practicing its own discipline. Hubbard's ~50% figure is real but workshop-sourced; the academic anchor is the 1982 review documenting pervasive interval overconfidence.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · You forecast 90 percent and the event does not happen. Under the half-Brier score this course uses, what did that forecast cost versus being 90-and-right?</p>
+      <button class="qopt" type="button">A · 0.81 versus 0.01 - confident-and-wrong scores 81 times worse, which is the quantified case against confidence theater</button>
+      <button class="qopt" type="button">B · 0.9 versus 0.1 - the score is linear in the error</button>
+      <button class="qopt" type="button">C · Both score the same, since the forecast was reasonable either way</button>
+      <p class="qwhy">(0.9 - 0)^2 = 0.81 against (0.9 - 1)^2 = 0.01. The squaring is the point: it makes the rule proper (truthful reporting is optimal) and prices bravado honestly. Note the convention: this is the modern half-Brier (0 to 1); Brier's 1950 original sums over categories and runs 0 to 2 for binary events.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Two analysts estimate campaign uptake. A says "11 to 13 percent" and has missed 5 of her last 10 claimed-90 intervals. B says "6 to 20 percent" and has hit 9 of 10. Whose estimate should the memo carry?</p>
+      <button class="qopt" type="button">A · A's - it is more precise, and precision is what estimates are for</button>
+      <button class="qopt" type="button">B · B's - a 90 percent interval from someone whose 90 means 90 is information; A's narrow range is confidence theater with a measured 50 percent hit rate</button>
+      <button class="qopt" type="button">C · Average the two ranges, since combining estimates always helps</button>
+      <p class="qwhy">An interval's value is its width TIMES its reliability, and only the hit rate certifies the reliability. A's range sounds better in the meeting and is measurably a coin flip. This is also why the memo records the estimator's calibration number as metadata - and why naive averaging with an uncalibrated input imports the miscalibration.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Lichtenstein, Fischhoff &amp; Phillips 1982</span><span class="note">The peer-reviewed anchor: pervasive overconfidence in interval estimates, from the Kahneman-Slovic-Tversky volume</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Hubbard, How to Measure Anything ch. 5</span><span class="note">The ~40-60% untrained hit rates and the training effect - explicitly characterized as workshop data plus his literature reading, with the three-hours quote</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Brier 1950 + the half-Brier convention</span><span class="note">The proper scoring rule, with the 0-2 original versus 0-1 modern convention stated once, precisely</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The ten verified quiz facts</span><span class="note">Every answer sourced to URL on reveal; contested quantities carry their definitions in the question stems</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Mellers et al. 2014 training result</span><span class="note">Named as the tournament-grade evidence; session 3 teaches it in full with its misquote trap</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL and every honesty caveat: <span class="mono">materials/official-course-map.md</span> in this repo.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Calibration, defined</b><span>Of everything you call 90 percent sure, about 90 percent is true. Matched, not confident.</span></div>
+      <div class="cheat-item"><b>The untrained baseline</b><span>Claimed-90 intervals typically hit 40-60 percent. Your lab number is a baseline, not a verdict.</span></div>
+      <div class="cheat-item"><b>Half-Brier anatomy</b><span>0.01 confident-right · 0.25 coin flip · 0.81 confident-wrong. Proper rule: honesty is optimal.</span></div>
+      <div class="cheat-item"><b>The equivalent bet</b><span>90 percent sure = would bet $9 to win $1. Stomach says no? The range was performance.</span></div>
+      <div class="cheat-item"><b>Width is honesty</b><span>Narrowness impresses; only hit rate certifies. Wide-and-right beats narrow-and-wrong, always.</span></div>
+      <div class="cheat-item"><b>It trains</b><span>Scored repetition with feedback - most people approach 90 within hours. Retake in three days.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>You can now state honest uncertainty about a quantity. Session 3 turns to events: the forecasting habits that won the largest tournament ever run - base rates before case details, small frequent updates, the fox's many small ideas - plus the famous dart-throwing chimpanzee quote taught with the correction its own author begs people to remember. Then the forecast game scores you against two bots, and one of them is humblingly hard to beat.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 6 · learn-decision-intelligence-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="01-decisions-first.html">← Prev: Decisions first</a> &nbsp;·&nbsp; <a href="03-superforecasting-habits.html">Next: Superforecasting habits →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/di-live.js?v=1"></script>
+</body>
+</html>

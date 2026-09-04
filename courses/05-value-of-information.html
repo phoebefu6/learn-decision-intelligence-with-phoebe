@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 5 of 6. Value of information: Howard's EVPI puts a hard ceiling on what any study is worth to a decision - the live calculator prices Mango Lane's $5k study, and the verdict surprises the people asking.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Value of information - learn decision intelligence with phoebe">
+<meta property="og:description" content="Session 5 of 6. Price the study before you buy it: EVPI by hand, then live on the calculator.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/courses/05-value-of-information.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Value of information - learn decision intelligence with phoebe">
+<meta name="twitter:description" content="Session 5 of 6. EVPI by hand, then live on the calculator - the do-not-buy surprise.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 5 · Value of information - learn decision intelligence with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-decision-intelligence-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Decision Intelligence with Phoebe · Session 5 of 6</div>
+    <h1>Value of <span class="accent">information</span></h1>
+    <p class="sub">The memo has one section left before the decision: the information verdict. Mango Lane's team wants a $5k segmentation study before committing $12k to the voucher campaign - and until tonight, the argument for it has been political: who sounds cautious, who sounds bold. A 1966 formula ends that. The expected value of perfect information puts a hard ceiling on what ANY study can be worth to THIS decision, computable from numbers already in the memo - and for the voucher case the ceiling comes out BELOW the study's price. Tonight you compute it by hand, feel it on the live calculator, and write the verdict.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hands-on</span>
+      <span class="chip audience">Everyone whose memo needs a study decision</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Pricing information</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the calculator</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>The memo's information verdict</h2>
+    </div>
+    <p class="lede">Every analysis request is an implicit purchase order: someone's time, a delay to the decision, sometimes a literal invoice. "Let's get more data first" sounds prudent precisely because nobody prices it. Tonight the memo gains the section that does - the <strong>information verdict</strong>: what more information is worth to this decision, what it costs, and therefore whether to buy it. Arithmetic, not politics.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> EVPI computed by hand on the voucher numbers - and the do-not-buy surprise. The tent-shaped law of where information is valuable, felt on the live calculator. And Hubbard's measurement inversion: why organizations routinely measure the variables worth the least.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The question nobody asks of an analysis<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Teams ask whether an analysis is feasible, rigorous, fast. Almost nobody asks the economic question: <strong>what is knowing this worth?</strong> Ronald Howard made it computable in his 1966 "Information Value Theory": the <strong>expected value of perfect information</strong> is the expected value of deciding AFTER the uncertainty resolves, minus the expected value of the best decision you can make NOW. That difference is the ceiling on what any study, test, or dataset can possibly be worth to this decision - no real study, being imperfect, can beat it.</p>
+        <p>Howard drew the line explicitly against Shannon's information theory: Shannon measures information in bits, blind to what it is FOR. A megabyte that cannot change your decision is worth $0; a single bit that flips a $12k call can be worth thousands. Value of information is decision-first by construction - which is why it belongs in this course and in your memo.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>Session 1's six-word question already priced one analysis: the stakeholder who said "nothing would change my mind" was requesting a $0-value study. Tonight that intuition becomes a formula - EVPI for an unflippable decision computes to exactly $0, and for the voucher case it computes to a number with a verdict attached.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Tonight's vocabulary<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>EV(act now)</strong> - the probability-weighted payoff of the best action under current uncertainty. The memo's numbers already contain it.</li>
+          <li><strong>EV(perfect info)</strong> - the payoff if a perfectly reliable oracle told you the truth BEFORE you chose: act when it says true, skip when it says false.</li>
+          <li><strong>EVPI</strong> - the difference between the two. The ceiling on any study's worth to this decision.</li>
+          <li><strong>Ceiling, not price</strong> - real studies deliver imperfect information, so they are worth strictly less than EVPI. A study that fails the ceiling test needs no further analysis.</li>
+          <li><strong>Measurement inversion</strong> - Hubbard's practice finding: the variables organizations measure most are usually the ones worth the least to measure.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers EVPI by hand</span>
+      <h2>EVPI on the voucher numbers</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The memo already holds everything the formula needs. The campaign costs $12k; if the voucher hypothesis is true it nets <strong>+$18k</strong>, if false it nets <strong>-$12k</strong>; the calibrated, base-rated estimate from sessions 2-3 puts P(true) at <strong>0.7</strong>; and the offered segmentation study costs <strong>$5k</strong>. Walk the three lines.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EVPI as a decision tree: deciding now at p 0.7 gives expected value 9.0k by acting, while deciding after perfect information gives 12.6k, so EVPI is the 3.6k gap - below the 5k study price">
+        <style>
+          .d5aT { font: 700 13px Inter, sans-serif; fill: #111827; }
+          .d5aK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d5aB { font: 400 12px Inter, sans-serif; fill: #111827; }
+          .d5aH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d5aW { font: 400 12px Inter, sans-serif; fill: #F0ABFC; }
+          .d5aA { font: 700 12px Inter, sans-serif; fill: #92400E; }
+          .d5aN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <defs>
+          <marker id="d5Ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <rect x="60" y="46" width="360" height="256" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d5aK" x="80" y="76">Branch 1 · decide now, p = 0.7</text>
+        <circle cx="110" cy="170" r="6" fill="#86198F"/>
+        <line x1="116" y1="166" x2="176" y2="128" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Ar)"/>
+        <line x1="116" y1="174" x2="176" y2="216" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Ar)"/>
+        <rect x="180" y="106" width="216" height="44" rx="9" fill="#fff" stroke="#C026D3"/>
+        <text class="d5aB" x="288" y="124" text-anchor="middle">act: 0.7 x 18 - 0.3 x 12</text>
+        <text class="d5aK" x="288" y="142" text-anchor="middle">= 12.6 - 3.6 = $9.0k</text>
+        <rect x="180" y="196" width="216" height="44" rx="9" fill="#fff" stroke="#C026D3"/>
+        <text class="d5aB" x="288" y="214" text-anchor="middle">skip: keep the $12k</text>
+        <text class="d5aK" x="288" y="232" text-anchor="middle">= $0</text>
+        <text class="d5aK" x="80" y="282">best now = act = $9.0k</text>
+        <rect x="460" y="46" width="360" height="256" rx="12" fill="#701A75"/>
+        <text class="d5aH" x="480" y="76">Branch 2 · perfect info first, then decide</text>
+        <circle cx="510" cy="170" r="6" fill="#F0ABFC"/>
+        <line x1="516" y1="166" x2="576" y2="128" stroke="#F0ABFC" stroke-width="2" marker-end="url(#d5Ar)"/>
+        <line x1="516" y1="174" x2="576" y2="216" stroke="#F0ABFC" stroke-width="2" marker-end="url(#d5Ar)"/>
+        <rect x="580" y="106" width="216" height="44" rx="9" fill="#FDF4FF"/>
+        <text class="d5aB" x="688" y="124" text-anchor="middle">told true (0.7): act</text>
+        <text class="d5aK" x="688" y="142" text-anchor="middle">+$18k</text>
+        <rect x="580" y="196" width="216" height="44" rx="9" fill="#FDF4FF"/>
+        <text class="d5aB" x="688" y="214" text-anchor="middle">told false (0.3): skip</text>
+        <text class="d5aK" x="688" y="232" text-anchor="middle">$0 - the loss avoided</text>
+        <text class="d5aH" x="480" y="282">EV = 0.7 x 18 + 0.3 x 0 = $12.6k</text>
+        <rect x="60" y="322" width="760" height="56" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="1.5"/>
+        <text class="d5aA" x="80" y="345">EVPI = 12.6 - 9.0 = $3.6k - the ceiling on what ANY study is worth to this decision.</text>
+        <text class="d5aA" x="80" y="365">The study costs $5k &gt; $3.6k. Verdict: do NOT buy - decide now with what you have.</text>
+        <text class="d5aN" x="60" y="404">Perfect information earns its keep in one place only: the 0.3 branch, where it converts -$12k into $0.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the EVPI decision tree, and the $3.6k gap that prices the study</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three lines, slowly<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <tr><th>Line</th><th>Arithmetic</th><th>Result</th></tr>
+          <tr><td><strong>Best decision now</strong></td><td>act = 0.7 x 18 - 0.3 x 12 = 12.6 - 3.6; skip = 0; take the better</td><td>$9.0k</td></tr>
+          <tr><td><strong>With perfect information</strong></td><td>act only when told true: 0.7 x 18 + 0.3 x 0</td><td>$12.6k</td></tr>
+          <tr><td><strong>EVPI</strong></td><td>12.6 - 9.0</td><td>$3.6k</td></tr>
+        </table>
+        <p>Notice where perfect information makes its money: only in the false branch, where the oracle saves you from a -$12k mistake you would otherwise take 30% of the time (0.3 x 12 = $3.6k - the same number from the other side). And the punchline the team will not enjoy: even a PERFECT study is worth $3.6k here, and the imperfect one on offer costs $5k. The prudent-sounding move loses money before it starts.</p>
+        <div class="callout tip">
+          <p><strong>Why the verdict feels wrong and is not.</strong> At p = 0.7 the decision is not close - acting is already clearly better, so an oracle rarely changes the choice. Studies feel valuable in proportion to anxiety; they ARE valuable in proportion to how likely they are to flip the decision. Those are different quantities, and only one of them belongs in the memo.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers where information IS valuable</span>
+      <h2>The tent-shaped law, and the inversion</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Rerun the same arithmetic at p = 0.5: act = 0.5 x 18 - 0.5 x 12 = <strong>$3.0k</strong>; perfect info = 0.5 x 18 = $9.0k; EVPI = 9.0 - 3.0 = <strong>$6.0k</strong>, which beats the $5k study - buy it. Same decision, same payoffs, opposite verdict. The only thing that moved was how CLOSE the call is - and that is the law.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EVPI as a function of p is tent-shaped: zero at both certainty ends, peaking at the decision boundary p 0.4, with the 5k study-cost line cutting the tent and the buy zone shaded between roughly p 0.28 and 0.58">
+        <style>
+          .d5bT { font: 700 13px Inter, sans-serif; fill: #111827; }
+          .d5bK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d5bM { font: 700 12px Inter, sans-serif; fill: #C026D3; }
+          .d5bA { font: 700 12px Inter, sans-serif; fill: #92400E; }
+          .d5bG { font: 700 12px Inter, sans-serif; fill: #166534; }
+          .d5bN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <text class="d5bT" x="100" y="40">EVPI across every belief p - the voucher payoffs, +$18k / -$12k</text>
+        <line x1="100" y1="340" x2="800" y2="340" stroke="#6B7280" stroke-width="1.5"/>
+        <line x1="100" y1="60" x2="100" y2="340" stroke="#6B7280" stroke-width="1.5"/>
+        <text class="d5bN" x="96" y="362">0</text>
+        <text class="d5bN" x="362" y="362">0.4</text>
+        <text class="d5bN" x="432" y="362">0.5</text>
+        <text class="d5bN" x="568" y="362">0.7</text>
+        <text class="d5bN" x="772" y="362">1.0</text>
+        <text class="d5bN" x="450" y="390" text-anchor="middle">p = P(voucher hypothesis true)</text>
+        <text class="d5bN" x="56" y="182">$5k</text>
+        <text class="d5bN" x="52" y="110">$7.2k</text>
+        <polygon points="289,178 372,106 497,178" fill="#166534" fill-opacity="0.16"/>
+        <text class="d5bG" x="386" y="165" text-anchor="middle">buy zone</text>
+        <polyline points="100,340 372,106 780,340" fill="none" stroke="#701A75" stroke-width="2.5"/>
+        <line x1="100" y1="178" x2="800" y2="178" stroke="#F59E0B" stroke-width="2" stroke-dasharray="7 5"/>
+        <text class="d5bA" x="640" y="170">study cost $5k</text>
+        <line x1="372" y1="106" x2="372" y2="340" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text class="d5bN" x="372" y="96" text-anchor="middle">peak $7.2k at the decision boundary p = 0.4</text>
+        <circle cx="440" cy="145" r="6" fill="#C026D3"/>
+        <text class="d5bM" x="452" y="140">p = 0.5: EVPI $6.0k, buy</text>
+        <circle cx="576" cy="223" r="6" fill="#C026D3"/>
+        <text class="d5bM" x="588" y="218">p = 0.7: EVPI $3.6k, do not buy</text>
+        <text class="d5bN" x="100" y="414">Zero at both certainty ends, peak where the call is closest. Break-evens with a $5k study: p = 0.28 and p = 0.58.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the EVPI tent: information is worth most where the decision is genuinely close</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The law that falls out of the tent<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Three readings of the same shape:</p>
+        <ul>
+          <li><strong>Information is worth most where the decision is genuinely close.</strong> The peak sits at the decision boundary (p = 0.4 here, where acting breaks even) - the region where an oracle flips the choice most often.</li>
+          <li><strong>Near-certainty makes studies worthless.</strong> At either end of the tent, the oracle almost never changes what you would do anyway, so EVPI slides to $0.</li>
+          <li><strong>A decision the data cannot flip has EVPI = $0.</strong> Session 1's "nothing would change my mind" stakeholder, now with arithmetic: if no answer alters the action, the study's ceiling is zero - decoration, priced.</li>
+        </ul>
+        <p>The tent also explains why the p = 0.7 verdict stung: the team's own confidence is what made the study worthless. You cannot simultaneously claim to be 70% sure and claim the study is essential - the memo makes that tension visible, in dollars.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Hubbard's measurement inversion<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Douglas Hubbard ran this arithmetic across his consulting practice - computed information values on 60+ business cases and 4,000+ variables - and reports a pattern he calls the <strong>measurement inversion</strong>:</p>
+        <div class="prompt-box good"><span class="label">Near-verbatim · Hubbard</span>"In a business case, the economic value of measuring a variable is usually inversely proportional to how much measurement attention it usually gets."</div>
+        <p>Organizations measure what is easy, familiar, and already instrumented - and the variables that would actually move their decisions sit unmeasured, because nobody priced them. His working rule of thumb for that price, verbatim from his deck: <strong>"the value of information is simply the cost of being wrong times the chance of being wrong."</strong> (Check it against Part 1: cost of the wrong act = $12k, chance = 0.3, product = $3.6k - the EVPI.)</p>
+        <p><strong>Sourcing character, honestly:</strong> these are Hubbard's practice findings from proprietary consulting data, not peer-reviewed research. The course teaches the inversion as a practitioner's well-documented field observation - useful as a prior to check on your own variables, not as settled science.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers finding the high-VoI variable</span>
+      <h2>Fermi decomposition: which uncertainty carries the value</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">EVPI so far priced the whole hypothesis. Real decisions decompose - and so does the value of information. Break the campaign's value into factors, ask which factor's uncertainty most moves the decision, and you have found where the VoI actually lives. Per the inversion, it is usually not the factor anyone proposed to measure.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Fermi tree for campaign value: uptake rate times retained value times segment size minus cost, with per-factor uncertainty widths drawn as bars - uptake is widest and decision-moving, so it carries the value of information">
+        <style>
+          .d5cH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d5cK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d5cB { font: 400 11px Inter, sans-serif; fill: #111827; }
+          .d5cA { font: 700 11px Inter, sans-serif; fill: #92400E; }
+          .d5cN { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <defs>
+          <marker id="d5Cr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <rect x="310" y="40" width="260" height="52" rx="12" fill="#701A75"/>
+        <text class="d5cH" x="440" y="62" text-anchor="middle">Campaign net value =</text>
+        <text class="d5cH" x="440" y="80" text-anchor="middle">uptake x retained value x segment - cost</text>
+        <line x1="360" y1="92" x2="165" y2="146" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Cr)"/>
+        <line x1="415" y1="92" x2="345" y2="146" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Cr)"/>
+        <line x1="465" y1="92" x2="535" y2="146" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Cr)"/>
+        <line x1="520" y1="92" x2="715" y2="146" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d5Cr)"/>
+        <rect x="70" y="150" width="180" height="64" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="2"/>
+        <text class="d5cK" x="160" y="174" text-anchor="middle">uptake rate</text>
+        <text class="d5cB" x="160" y="196" text-anchor="middle">4% to 18% - who knows?</text>
+        <rect x="260" y="150" width="180" height="64" rx="10" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d5cK" x="350" y="174" text-anchor="middle">retained value / save</text>
+        <text class="d5cB" x="350" y="196" text-anchor="middle">$80 to $120</text>
+        <rect x="450" y="150" width="180" height="64" rx="10" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d5cK" x="540" y="174" text-anchor="middle">segment size</text>
+        <text class="d5cB" x="540" y="196" text-anchor="middle">1,400 flagged - known</text>
+        <rect x="640" y="150" width="180" height="64" rx="10" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d5cK" x="730" y="174" text-anchor="middle">campaign cost</text>
+        <text class="d5cB" x="730" y="196" text-anchor="middle">$12k - contracted</text>
+        <text class="d5cN" x="70" y="242">uncertainty width per factor (illustrative):</text>
+        <rect x="70" y="252" width="150" height="12" rx="6" fill="#F59E0B"/>
+        <rect x="260" y="252" width="66" height="12" rx="6" fill="#C026D3"/>
+        <rect x="450" y="252" width="18" height="12" rx="6" fill="#C026D3"/>
+        <rect x="640" y="252" width="8" height="12" rx="6" fill="#C026D3"/>
+        <rect x="70" y="284" width="360" height="28" rx="14" fill="#FFF7E6" stroke="#F59E0B"/>
+        <text class="d5cA" x="250" y="302" text-anchor="middle">widest AND decision-moving: the VoI lives in uptake</text>
+        <text class="d5cN" x="70" y="344">The $5k study on offer measures the SEGMENT - the best-known factor of the four. The inversion, in the wild.</text>
+        <text class="d5cN" x="70" y="366">Widths are Mango Lane course fiction; the method - decompose, compare widths, price the widest mover - is the lesson.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the Fermi tree: the widest decision-moving factor carries the value of information</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Decompose, then price the right factor<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The move takes five minutes in any meeting: write the value as a product of factors (uptake rate x retained value per save x segment size - cost), put your current 90% interval on each factor, and ask which interval's WIDTH most moves the final decision. That factor carries the VoI. The others - however easy or traditional to measure - carry little or none.</p>
+        <p>For the voucher case the decomposition exposes the request: the offered study would sharpen segment size, the factor everyone already knows, while uptake - the factor that decides whether the campaign nets +$18k or -$12k - stays a guess. If any study is worth running here, it is a small uptake pilot, not a $5k segmentation.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Ceiling, honestly.</strong> Real studies deliver IMPERFECT information, so EVPI is a ceiling, not a price: a study that would resolve about half your uncertainty is worth at most about half the ceiling. The calculator prices the ceiling anyway, because the ceiling test is the cheap first gate - a study that cannot clear it even if perfect, like tonight's $5k against a $3.6k ceiling, needs no further analysis at all.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>The EVPI calculator, live</h2>
+      <span class="tag demo">★ 20 min · everyone builds</span>
+    </div>
+    <p class="lede">Pure live arithmetic - every number below recomputes as you drag. The preset is the voucher case exactly as the memo carries it: $12k campaign, +$18k if true, -$12k if false, $5k study on offer, p = 0.7.</p>
+
+    <div id="di-voi"></div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Confirm the canon at the defaults.</strong> Read the board: EV of acting now <strong>$9.0k</strong>, EV with perfect information $12.6k, EVPI <strong>$3.6k</strong> - and the verdict line says do NOT buy the $5k study. That is Part 1's hand arithmetic, now live. If your board disagrees with your pencil, one of them has a typo and it is not the board.</p></div>
+      <div class="step"><p><strong>Drag p down to 0.5 and watch the tent by hand.</strong> EVPI climbs as you drag - $3.6k at 0.7, <strong>$6.0k at 0.5</strong> - and the verdict flips to buy along the way. You are walking down the right slope of the tent toward the peak: every step closer to the decision boundary makes the same study worth more.</p></div>
+      <div class="step"><p><strong>Find the break-even points where EVPI = $5k.</strong> Drag slowly until the verdict flips and note BOTH flip points: coming down from high p the verdict flips to buy just below p = 0.58 (exactly 7/12), and coming up from low p it flips at about p = 0.28 (exactly 5/18). Between them is the buy zone; outside it, the study loses money even if perfect. Write both numbers - they are the study's shelf life as your belief moves.</p></div>
+      <div class="step"><p><strong>Stress the payoffs: double the loss to $24k.</strong> Set the loss to 24 and watch the buy zone widen - at the p = 0.7 preset the verdict now says buy (EVPI $7.2k), and the zone stretches to roughly p = 0.28 through 0.79. Asymmetric stakes buy more information: the bigger the mistake an oracle can save you from, the more the oracle is worth. Reset to 12 when done.</p></div>
+      <div class="step"><p><strong>Write two information verdicts.</strong> First the voucher case, into the memo: "EVPI ceiling $3.6k at our p = 0.7; study costs $5k; verdict: do not buy - decide now." Then one analysis request from your own week: its ceiling, its cost, its verdict - one sentence each. If you cannot state the decision it serves and the p it would move, you have found another $0 study.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>What to bring to session 6.</strong> Your memo, now complete except the last section: default and criteria (s1), calibrated estimates (s2), base rates and updates (s3), graded uncertainty (s4), and tonight's information verdict. Session 6 assembles it and teaches the part that decides whether anyone trusts it: communicating the uncertainty without losing the room.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 6</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Price one live analysis request</strong> at work with the ceiling test: the decision it serves, the p, the payoffs, EVPI, the cost. One paragraph, verdict included. Expect at least one $0.</li>
+      <li><strong>Run the Fermi decomposition</strong> on one decision you own: factors, 90% intervals per factor, which width moves the call. Check for the inversion - is the measured factor the valuable one?</li>
+      <li><strong>Find your tent position</strong> - for your priced request, is the decision near a boundary (peak, information valuable) or near certainty (tail, decide now)? One sentence on which and why.</li>
+      <li><strong>Apply Hubbard's rule of thumb</strong> - cost of being wrong times chance of being wrong - to the same request and compare with your EVPI line. They should land close; reconcile them if not.</li>
+      <li><strong>Optional:</strong> Howard, "Information Value Theory" (IEEE 1966) - the original six pages; and Hubbard's measurement-inversion essay at hubbardresearch.com for the practice-data version.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · New decision: p = 0.6 that acting pays +$10k, else it loses $10k; skipping pays $0. What is the EVPI?</p>
+      <button class="qopt" type="button">A · $6k - the expected value with perfect information, 0.6 x 10</button>
+      <button class="qopt" type="button">B · $2k - the expected value of acting now, 0.6 x 10 - 0.4 x 10</button>
+      <button class="qopt" type="button">C · $4k - best now is act at 0.6 x 10 - 0.4 x 10 = $2k; perfect info gives 0.6 x 10 = $6k; EVPI = 6 - 2 = $4k</button>
+      <p class="qwhy">EVPI is always the DIFFERENCE: EV(decide after the truth is known) minus EV(best decision now). Answer A stops at the perfect-info value without subtracting; B stops at the act-now value. The $4k gap is the ceiling on any study for this decision - equal, per Hubbard's rule of thumb, to the $10k cost of being wrong times the 0.4 chance of being wrong.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Why does EVPI peak near the decision boundary and vanish at both certainty ends?</p>
+      <button class="qopt" type="button">A · Because information only has value when it can change the action - near the boundary an oracle flips the decision often, while near certainty you would do the same thing regardless, so knowing the truth is worth nothing</button>
+      <button class="qopt" type="button">B · Because probabilities near 0.5 are harder to estimate, and harder estimates always justify more research spending</button>
+      <button class="qopt" type="button">C · Because studies are cheaper to run when a decision is close, so their net value rises there</button>
+      <p class="qwhy">Value of information is decision-first: it counts only the scenarios where knowing the truth changes what you do. Close call = frequent flips = high EVPI; near-certainty = the oracle confirms your plan = $0. The same logic prices "nothing would change my mind" at exactly $0 - session 1's detector, now in dollars.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · What does Hubbard's measurement inversion claim, and what kind of evidence backs it?</p>
+      <button class="qopt" type="button">A · Peer-reviewed experiments prove organizations always measure the wrong variables, in every industry studied</button>
+      <button class="qopt" type="button">B · That the economic value of measuring a variable is usually inversely proportional to the measurement attention it gets - a pattern from his consulting practice across 60+ cases and 4,000+ variables, so a practitioner's field finding rather than peer-reviewed research</button>
+      <button class="qopt" type="button">C · That measurement itself inverts the variable being measured, so high-VoI variables should be left unmeasured</button>
+      <p class="qwhy">The claim is a "usually", not an "always" - and its basis is Hubbard's proprietary consulting data, honestly labeled as practice findings. That does not make it useless: it makes it a strong prior to CHECK with tonight's tools - decompose your decision, compare uncertainty widths, and see whether the measured factor is the valuable one.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Howard, Information Value Theory (IEEE Trans. SSC, 1966)</span><span class="note">EVPI as the value of deciding after uncertainty resolves minus the best decision now, explicitly contrasted with Shannon information - paraphrased; the ceiling framing is his</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Hubbard, The Measurement Inversion + How to Measure Anything deck</span><span class="note">The inversion near-verbatim and the "cost of being wrong times chance of being wrong" rule verbatim - characterized honestly as practice findings from 60+ cases / 4,000+ variables, not peer-reviewed research</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The live calculator canon (di-live.js, verified in-engine)</span><span class="note">Pure arithmetic on the voucher preset: $9.0k / $12.6k / $3.6k at p = 0.7; $6.0k at p = 0.5 - the widget states its numbers on-screen</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Fermi decomposition worked example</span><span class="note">Method is standard estimation practice; the factor ranges are Mango Lane course fiction, labeled illustrative on the figure</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL and every honesty caveat: <span class="mono">materials/official-course-map.md</span> in this repo.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>EVPI</b><span>EV(decide after the truth is known) minus EV(best decision now). The ceiling on what ANY study is worth to THIS decision.</span></div>
+      <div class="cheat-item"><b>The voucher canon</b><span>p = 0.7: act $9.0k, perfect info $12.6k, EVPI $3.6k &lt; $5k study - do not buy. p = 0.5: EVPI $6.0k - buy.</span></div>
+      <div class="cheat-item"><b>The tent law</b><span>Information peaks where the call is close (the decision boundary) and is worth $0 at certainty - or when nothing could flip the decision.</span></div>
+      <div class="cheat-item"><b>Ceiling, not price</b><span>Real studies are imperfect: worth strictly less than EVPI. Failing the ceiling test ends the conversation - no further analysis needed.</span></div>
+      <div class="cheat-item"><b>The inversion</b><span>The variables measured most are usually worth least (Hubbard's practice finding). Decompose, compare widths, price the widest mover.</span></div>
+      <div class="cheat-item"><b>The rule of thumb</b><span>Value of information = cost of being wrong x chance of being wrong. Sanity-checks every EVPI you compute.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The memo is built - default, criteria, calibrated estimates, base rates, graded uncertainty, information verdict. Session 6 delivers it: how to state uncertainty so trust survives it (the evidence says precise numeric ranges cost almost nothing, while vague verbal hedges are what erode you), which metrics survive being decided on, and the finished one-page memo your whole team can run. Bring everything; leave with the artifact.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-decision-intelligence-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="04-uncertainty-you-can-promise.html">← Prev: Uncertainty you can promise</a> &nbsp;·&nbsp; <a href="../index.html">All sessions</a> &nbsp;·&nbsp; <a href="06-decide-and-communicate.html">Next: Decide and communicate →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/di-live.js?v=1"></script>
+</body>
+</html>

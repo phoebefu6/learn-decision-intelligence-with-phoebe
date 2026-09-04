@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 1 of 6. Decisions first, data second: commit to the default up front, set criteria before looking, and ask what would change your mind - the Kozyrkov discipline that stops data from becoming decoration.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Decisions first - learn decision intelligence with phoebe">
+<meta property="og:description" content="Session 1 of 6. Commit to the default up front, criteria before data - or the data merely decorates.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/courses/01-decisions-first.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Decisions first - learn decision intelligence with phoebe">
+<meta name="twitter:description" content="Session 1 of 6. Commit to the default up front, criteria before data.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 1 · Decisions first - learn decision intelligence with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-decision-intelligence-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Decision Intelligence with Phoebe · Session 1 of 6</div>
+    <h1>Decisions <span class="accent">first</span></h1>
+    <p class="sub">Most analytics is ordered backwards: gather the data, stare at it, then decide what it means. Tonight reverses the order, the way the discipline's founder teaches it: commit to your default action before you look, write the criteria that would change it, and only then let the data speak - because data examined without pre-set criteria does not drive a decision, it decorates one already made. Six sessions from now you will have a decision memo template your whole team can run; tonight writes its first two sections.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Start here</span>
+      <span class="chip audience">Leaders who sign off on decisions</span>
+      <span class="chip audience">Practitioners whose analyses feed them</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-22 · The discipline, defined and ordered</span>
+      <span class="a3" style="flex:4">22-40 · Build-along: the memo's first sections</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>How this course works</h2>
+    </div>
+    <p class="lede">Six sessions, 45 minutes each, one artifact: a <strong>decision memo template</strong> that fills in section by section - default action and criteria tonight, calibrated estimates in session 2, base rates and updates in session 3, promised uncertainty in session 4, a value-of-information verdict in session 5, and the communication plan in session 6. The running case is Mango Lane's decision desk: the same fashion-app universe as the ensemble and deep learning courses, now facing the decisions those models feed.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> The one-sentence discipline definition from the person who named it. The default-first habit that inoculates a meeting against confirmation bias. And the six-word question that turns any opinion-holder into a testable forecaster.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The discipline, in its founder's words<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Cassie Kozyrkov, who built the field at Google and trained tens of thousands there, defines decision intelligence as "a new academic discipline concerned with all aspects of selecting between options" - one that "brings together the best of applied data science, social science, and managerial science into a unified field that helps people use data to improve their lives, their businesses, and the world around them."</p>
+        <p>Note what the definition centers: <strong>selecting between options</strong>. Not models, not dashboards, not pipelines - those are means. She calls it "a vital science for the AI era, covering the skills needed to lead AI projects responsibly and design objectives, metrics, and safety-nets for automation at scale." The whole course lives inside that sentence.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>Mango Lane has eleven dashboards, three models, and a weekly meeting where the churn number is admired and nothing changes. Every tool upstream of a decision that never gets made is a cost center wearing a lab coat. The memo this course builds exists to make the decision - not the analysis - the unit of work.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The vocabulary for the whole arc<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Default action</strong> - what you will do if no further information arrives. Every real decision has one, usually unstated. Stating it is tonight's first move.</li>
+          <li><strong>Decision criteria</strong> - the pre-committed rule: "we launch if the estimate clears X". Set before data, or the data gets fitted to the wish.</li>
+          <li><strong>Calibration</strong> - whether your stated confidence matches your hit rate. Session 2 measures yours, live, and it will sting a little.</li>
+          <li><strong>Base rate</strong> - how often things like this happen, before your case's details. Session 3's anchor.</li>
+          <li><strong>Value of information</strong> - the most a study, test, or dataset is worth to THIS decision. Computable, and session 5 computes it live.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the default-first move</span>
+      <h2>Commit to the default before you look</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Kozyrkov's Harvard Business Review advice for great decision makers opens with five words that reorder everything downstream: <strong>"Commit to your default decision up front."</strong> The reason is not procedure. It is what looking at data does to a mind that has not committed.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two orderings compared: looking at data before setting criteria lets confirmation bias fit the data to the wish, while committing to a default and criteria first makes the data genuinely decisive">
+        <style>
+          .d1aH { font: 800 13px Inter, sans-serif; fill: #fff; }
+          .d1aB { font: 400 12px Inter, sans-serif; fill: #111827; }
+          .d1aK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d1aR { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+          .d1aN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <defs>
+          <marker id="d1Ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <rect x="60" y="50" width="370" height="230" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="d1aR" x="80" y="82">The usual order: data-inspired</text>
+        <rect x="80" y="100" width="150" height="38" rx="9" fill="#fff" stroke="#FCA5A5"/>
+        <text class="d1aB" x="155" y="124" text-anchor="middle">look at the data</text>
+        <line x1="230" y1="119" x2="280" y2="119" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d1Ar)"/>
+        <rect x="284" y="100" width="126" height="38" rx="9" fill="#fff" stroke="#FCA5A5"/>
+        <text class="d1aB" x="347" y="124" text-anchor="middle">form a feeling</text>
+        <rect x="80" y="168" width="330" height="38" rx="9" fill="#fff" stroke="#FCA5A5"/>
+        <text class="d1aB" x="245" y="192" text-anchor="middle">pick the numbers that agree with the feeling</text>
+        <line x1="347" y1="138" x2="245" y2="168" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d1Ar)"/>
+        <text class="d1aR" x="245" y="248" text-anchor="middle">the decision was made by the feeling</text>
+        <text class="d1aN" x="245" y="268" text-anchor="middle">the data merely inspired the story about it</text>
+        <rect x="450" y="50" width="370" height="230" rx="12" fill="#701A75"/>
+        <text class="d1aH" x="470" y="82">The disciplined order: data-driven</text>
+        <rect x="470" y="100" width="150" height="38" rx="9" fill="#FDF4FF"/>
+        <text class="d1aK" x="545" y="124" text-anchor="middle">state the default</text>
+        <line x1="620" y1="119" x2="666" y2="119" stroke="#F0ABFC" stroke-width="2" marker-end="url(#d1Ar)"/>
+        <rect x="670" y="100" width="130" height="38" rx="9" fill="#FDF4FF"/>
+        <text class="d1aK" x="735" y="124" text-anchor="middle">write the criteria</text>
+        <rect x="470" y="168" width="330" height="38" rx="9" fill="#FDF4FF"/>
+        <text class="d1aK" x="635" y="192" text-anchor="middle">THEN look: does the data clear the bar?</text>
+        <line x1="735" y1="138" x2="635" y2="168" stroke="#F0ABFC" stroke-width="2" marker-end="url(#d1Ar)"/>
+        <text class="d1aH" x="635" y="248" text-anchor="middle">now the data can actually change the outcome</text>
+        <text class="d1aN" x="60" y="330">Same data, same people, opposite epistemics. The only difference is WHEN the commitment happened.</text>
+        <text class="d1aN" x="60" y="352">Kozyrkov's framing: criteria set after looking cannot drive the decision - confirmation bias already did.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the ordering is the whole discipline</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why the order matters: the confirmation-bias mechanism<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Once a mind holds a preferred conclusion, data becomes a buffet: reach for what agrees, explain away what does not. Nobody experiences themselves doing it - that is what makes it bias rather than lying. Kozyrkov's essays frame the fix as an ordering constraint, not a virtue: <strong>if the criteria exist before the data arrives, the data can genuinely overturn the default. If they come after, the criteria were reverse-engineered from the wish.</strong></p>
+        <p>The default itself is not a guess at the answer. It is the honest statement of what happens on no-new-information: keep the current voucher policy, do not launch, wait a quarter. Stating it out loud does two things - it exposes who actually holds the decision, and it converts the meeting's question from "what does the data say" to the answerable "does the data clear OUR pre-stated bar".</p>
+        <div class="callout tip">
+          <p><strong>The six-word tool.</strong> Kozyrkov's signature question for any opinion-holder: <strong>what would it take to change your mind?</strong> A person with an answer is a decision-maker with criteria; a person without one is decoration around a foregone conclusion - and knowing which you are talking to changes what an analysis is worth building.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The role split: whose job is which question<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Kozyrkov's framework for data teams, paraphrased from her Harvard Business Review essay on great analysts: the roles answer different questions and mixing them up burns both.</p>
+        <table class="clean">
+          <tr><th>Role</th><th>Question</th><th>Speed vs rigor</th></tr>
+          <tr><td><strong>Analyst</strong></td><td>What is in the data? What is worth a closer look?</td><td>Fast exploration - conclusions stay INSIDE the data looked at</td></tr>
+          <tr><td><strong>Statistician</strong></td><td>Can we responsibly conclude this beyond the data?</td><td>Slow rigor - the ones who keep you from fooling yourself</td></tr>
+          <tr><td><strong>ML engineer</strong></td><td>Can we automate this at scale?</td><td>Production discipline</td></tr>
+          <tr><td><strong>Decision-maker</strong></td><td>What are the options, the default, the criteria?</td><td>The scarce skill the other three exist to serve</td></tr>
+        </table>
+        <p>The failure mode her framework names: organizations hire the first three lavishly and assume the fourth happens by itself. It does not - which is why this course exists and why its audience chip says leaders AND practitioners.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the memo</span>
+      <h2>The decision memo: one page that holds the whole course</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Everything the six sessions teach lands in one artifact: a memo short enough to actually get read, structured enough that skipping a section is visible. Here is the skeleton; tonight fills the first two rows, and each session hands you the next.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The decision memo skeleton: six sections - default action, criteria, calibrated estimates, base rates and updates, value of information verdict, communication plan - each mapped to the session that teaches it">
+        <style>
+          .d1bH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d1bB { font: 400 12px Inter, sans-serif; fill: #111827; }
+          .d1bS { font: 700 11px Inter, sans-serif; fill: #86198F; }
+          .d1bN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <rect x="60" y="40" width="760" height="44" rx="10" fill="#701A75"/>
+        <text class="d1bH" x="80" y="67">DECISION MEMO · one page · the decision, not the analysis, is the unit of work</text>
+        <rect x="60" y="96" width="760" height="40" rx="8" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d1bB" x="80" y="121">1 · Default action - what happens on no new information</text>
+        <text class="d1bS" x="800" y="121" text-anchor="end">tonight</text>
+        <rect x="60" y="144" width="760" height="40" rx="8" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d1bB" x="80" y="169">2 · Criteria - the pre-committed bar that flips the default</text>
+        <text class="d1bS" x="800" y="169" text-anchor="end">tonight</text>
+        <rect x="60" y="192" width="760" height="40" rx="8" fill="#fff" stroke="#E5E7EB"/>
+        <text class="d1bB" x="80" y="217">3 · Estimates - as 90% intervals from a calibrated estimator</text>
+        <text class="d1bS" x="800" y="217" text-anchor="end">session 2</text>
+        <rect x="60" y="240" width="760" height="40" rx="8" fill="#fff" stroke="#E5E7EB"/>
+        <text class="d1bB" x="80" y="265">4 · Base rates and updates - the outside view, then the case evidence</text>
+        <text class="d1bS" x="800" y="265" text-anchor="end">session 3</text>
+        <rect x="60" y="288" width="760" height="40" rx="8" fill="#fff" stroke="#E5E7EB"/>
+        <text class="d1bB" x="80" y="313">5 · Information verdict - what more data is worth, and whether to buy it</text>
+        <text class="d1bS" x="800" y="313" text-anchor="end">sessions 4-5</text>
+        <rect x="60" y="336" width="760" height="40" rx="8" fill="#fff" stroke="#E5E7EB"/>
+        <text class="d1bB" x="80" y="361">6 · Communication - the uncertainty stated so trust survives it</text>
+        <text class="d1bS" x="800" y="361" text-anchor="end">session 6</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the memo skeleton, one row per session</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why a memo and not a dashboard<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A dashboard answers "what is happening"; a memo answers "what are we doing about it, and what would change that". The dashboard has no default action, no criteria, no owner - which is precisely why eleven of them can coexist with zero decisions at Mango Lane. The memo's six rows are each a question someone must own, and an empty row is a visible confession rather than a silent gap.</p>
+        <p>It is also deliberately one page. A decision that cannot state its default, bar, estimates and verdict in a page is not a complex decision - it is an unmade one hiding in length.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>The voucher question that runs through this course - "spend $12k on a retention campaign for the flagged segment?" - has sat in Mango Lane's backlog for two months, revisited weekly, never decided. Not for lack of data: the churn model works. For lack of a stated default and a bar. Tonight it gets both, and by session 5 the memo will say precisely what the much-requested "more analysis" is worth: less than it costs.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers where judgment fits</span>
+      <h2>The judgment layer: what this course adds to your models</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Mango Lane already has a churn model at 73 percent holdout and a routing playbook for its AI spend. What is left is the layer those courses point at but do not teach: the human judgment that turns a score into an action.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The judgment layer sits between model outputs and actions: models produce scores, the decision layer adds defaults, criteria, calibration, base rates and value of information, and actions come out">
+        <style>
+          .d1cH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d1cB { font: 400 11px Inter, sans-serif; fill: #F0ABFC; }
+          .d1cK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d1cN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <defs>
+          <marker id="d1Cr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <rect x="60" y="70" width="200" height="120" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d1cK" x="160" y="104" text-anchor="middle">What models give you</text>
+        <text class="d1cN" x="160" y="130" text-anchor="middle">churn score 84%</text>
+        <text class="d1cN" x="160" y="150" text-anchor="middle">forecast: 412 tickets</text>
+        <text class="d1cN" x="160" y="170" text-anchor="middle">flag: anomaly day 130</text>
+        <line x1="260" y1="130" x2="322" y2="130" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d1Cr)"/>
+        <rect x="326" y="50" width="230" height="160" rx="12" fill="#701A75"/>
+        <text class="d1cH" x="441" y="80" text-anchor="middle">The judgment layer</text>
+        <text class="d1cB" x="441" y="106" text-anchor="middle">default + criteria (s1)</text>
+        <text class="d1cB" x="441" y="126" text-anchor="middle">calibrated estimates (s2)</text>
+        <text class="d1cB" x="441" y="146" text-anchor="middle">base rates + updates (s3)</text>
+        <text class="d1cB" x="441" y="166" text-anchor="middle">promised uncertainty (s4)</text>
+        <text class="d1cB" x="441" y="186" text-anchor="middle">value of information (s5)</text>
+        <line x1="556" y1="130" x2="618" y2="130" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d1Cr)"/>
+        <rect x="622" y="70" width="198" height="120" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d1cK" x="721" y="104" text-anchor="middle">What the business needs</text>
+        <text class="d1cN" x="721" y="130" text-anchor="middle">launch / hold / kill</text>
+        <text class="d1cN" x="721" y="150" text-anchor="middle">spend $12k or not</text>
+        <text class="d1cN" x="721" y="170" text-anchor="middle">communicated with trust intact</text>
+        <text class="d1cN" x="60" y="250">A score is not a decision. The middle box is the part no model outputs and no dashboard renders -</text>
+        <text class="d1cN" x="60" y="272">and per the discipline's founder, it is the scarce skill the whole data stack exists to serve.</text>
+        <text class="d1cN" x="60" y="308">Session 6 closes the loop: the decided action, communicated with its uncertainty stated and trust intact.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the layer between scores and actions, which is this whole course</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why intuition alone fails here, measurably<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The judgment layer cannot be vibes, because human judgment has measured, replicated failure modes exactly where decisions live. Two the course will demonstrate on you, not at you:</p>
+        <ul>
+          <li><strong>Overconfidence:</strong> across the classic calibration literature, untrained people asked for 90 percent confidence intervals capture the truth far less often - typical hit rates run 40 to 60 percent. Session 2's live lab measures yours; almost everyone's first number stings.</li>
+          <li><strong>Neglected base rates:</strong> the case's vivid details crowd out how often things like this actually happen. Session 3's forecast game makes the cost visible: a bot that only ever forecasts the base rate is embarrassingly hard to beat.</li>
+        </ul>
+        <p>Both are trainable - that is the course's optimistic spine. A roughly 45-minute probabilistic-reasoning module measurably improved forecasters' accuracy for months in the largest forecasting tournament ever run. Judgment is a skill with a gym, and sessions 2 and 3 are the gym.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Write the memo's first two sections</h2>
+      <span class="tag demo">★ 18 min · everyone builds</span>
+    </div>
+    <p class="lede">The voucher decision, for real: should Mango Lane spend $12k on a retention campaign for the churn model's flagged segment? Tonight you write the default and the criteria - and feel how much of the meeting's usual fog those two sections burn off.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>State the default action in one sentence.</strong> What happens if no new information arrives? For the voucher case: "we do not launch; the $12k stays in the retention budget." Notice the default is not neutral - not-launching is also a choice with consequences, and writing it down makes that visible.</p></div>
+      <div class="step"><p><strong>Name the decision-maker.</strong> One name, not a committee. The person whose mind the criteria must be able to change. If you cannot name them, you have found out why the decision has been circling for two months.</p></div>
+      <div class="step"><p><strong>Write the criteria as a flip-condition.</strong> "We launch IF the campaign's expected net gain exceeds $4k under our own estimates." Numbers you do not have yet - that is fine and correct: the criteria's job tonight is to define what sessions 2 through 5 must estimate, not to contain the answer.</p></div>
+      <div class="step"><p><strong>Ask the six-word question of yourself.</strong> What would it take to change YOUR mind about the launch? Write the honest answer under the criteria. If your answer is "nothing realistic", the memo has just saved everyone the cost of the analysis - decoration cancelled.</p></div>
+      <div class="step"><p><strong>Now repeat all four moves on a decision from your own week.</strong> Real one, live one. Default, owner, flip-condition, mind-changer. Keep it - every remaining session adds its section to this memo, and session 6 delivers the finished one.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>What to bring to session 2.</strong> Your memo with sections 1 and 2 filled. Session 2 fills section 3 - and before it lets you estimate anything for the memo, it measures how much your "90 percent sure" is actually worth, live, on ten questions with verified answers.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Audit one recent decision meeting</strong> against tonight's order: was a default stated? Criteria before the data came out? Write two sentences on what actually happened.</li>
+      <li><strong>Collect three "what would change your mind" answers</strong> - ask colleagues holding opinions about live decisions. Score each answer: criteria, or decoration?</li>
+      <li><strong>Find the unstated default</strong> in one stalled decision you know. Stalling IS choosing the default without admitting it - write down what is being chosen by the stall.</li>
+      <li><strong>Read Kozyrkov's HBR piece</strong> "The First Thing Great Decision Makers Do" - ten minutes, and the default-first move sticks permanently.</li>
+      <li><strong>Optional:</strong> start her free Making Friends with Machine Learning course (the first hour) - the same decisions-first framing applied to the whole ML lifecycle.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why must the default action and criteria be committed BEFORE looking at the data?</p>
+      <button class="qopt" type="button">A · Because it saves analysis time - fewer queries need to be run</button>
+      <button class="qopt" type="button">B · Because criteria set after looking are shaped by confirmation bias - the data can then only decorate a decision the feeling already made</button>
+      <button class="qopt" type="button">C · Because data teams prefer requirements documents up front</button>
+      <p class="qwhy">The ordering constraint is the discipline's core move: pre-committed criteria let data genuinely overturn the default; post-hoc criteria get reverse-engineered from the wish, invisibly, by normal human minds. Kozyrkov's five-word version: commit to your default decision up front.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · A stakeholder insists the retention campaign is essential. You ask what it would take to change their mind, and they say "honestly, nothing - the data team should just confirm it." What have you learned?</p>
+      <button class="qopt" type="button">A · The decision is already made; any analysis produced now is decoration, and the honest move is to say so rather than bill three weeks for a confirmation exercise</button>
+      <button class="qopt" type="button">B · They are a strong decision-maker with high conviction, which is what leadership looks like</button>
+      <button class="qopt" type="button">C · The analysis should proceed, since data always adds value regardless of whether it can change anything</button>
+      <p class="qwhy">The six-word question is a detector: an answer names criteria; "nothing" names a foregone conclusion. Analysis that cannot change an outcome has zero decision value - session 5 makes that literal with a formula, and it prices this analysis at exactly $0.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · In Kozyrkov's role framework, what makes the decision-maker "the scarce skill"?</p>
+      <button class="qopt" type="button">A · Decision-makers are senior, and seniority is rare by definition</button>
+      <button class="qopt" type="button">B · They can run analyses faster than analysts</button>
+      <button class="qopt" type="button">C · Framing the options, default, and criteria is the work everything else serves - and organizations staff analysts, statisticians and engineers lavishly while assuming this skill happens by itself</button>
+      <p class="qwhy">Her framework (paraphrased from the HBR analyst essay): analysts explore fast, statisticians conclude carefully, engineers automate - and all three serve a decision question someone must frame well. The framing skill gets no headcount line, which is why data stacks outnumber good decisions.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kozyrkov, Introduction to Decision Intelligence (2019)</span><span class="note">The discipline definition quoted verbatim, including the AI-era framing</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kozyrkov, The First Thing Great Decision Makers Do (HBR 2019)</span><span class="note">"Commit to your default decision up front" - verbatim; the criteria-before-data reasoning paraphrased from her companion essays</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kozyrkov's role framework (HBR 2018)</span><span class="note">Analyst / statistician / decision-maker split - presented as her framework, paraphrased, per the sourcing discipline</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The calibration and training evidence</span><span class="note">Named tonight as the optimistic spine; sessions 2 and 3 teach it with full citations and its honest caveats</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL and every honesty caveat: <span class="mono">materials/official-course-map.md</span> in this repo.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The definition</b><span>Decision intelligence: "all aspects of selecting between options" - the decision, not the model, is the unit of work.</span></div>
+      <div class="cheat-item"><b>The five words</b><span>"Commit to your default decision up front." Everything downstream reorders around them.</span></div>
+      <div class="cheat-item"><b>The ordering law</b><span>Criteria before data drives; criteria after data decorates. Same data, opposite epistemics.</span></div>
+      <div class="cheat-item"><b>The six-word detector</b><span>What would it take to change your mind? An answer = criteria. "Nothing" = decoration, cancel the analysis.</span></div>
+      <div class="cheat-item"><b>The memo</b><span>Default · criteria · calibrated estimates · base rates · information verdict · communication. One page, one owner per row.</span></div>
+      <div class="cheat-item"><b>The scarce skill</b><span>Framing options, defaults and criteria - the role every data hire exists to serve and nobody staffs.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The memo's estimates section demands numbers with honest uncertainty attached - and before you can give any, session 2 measures what your "90 percent sure" is actually worth: ten questions, verified answers, your own hit rate computed live. Across the classic studies, untrained estimators land between 40 and 60 percent. Bring humility; leave with a trainable skill.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-decision-intelligence-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-the-calibration-lab.html">Next: The calibration lab →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

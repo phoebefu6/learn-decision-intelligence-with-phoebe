@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 4 of 6. Uncertainty you can promise: calibration curves for models, and conformal prediction - distribution-free coverage guarantees built by hand, with the marginal-coverage fine print taught as content.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Uncertainty you can promise - learn decision intelligence with phoebe">
+<meta property="og:description" content="Session 4 of 6. From vibes to guarantees: conformal prediction sets built by hand, fine print included.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/courses/04-uncertainty-you-can-promise.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Uncertainty you can promise - learn decision intelligence with phoebe">
+<meta name="twitter:description" content="Session 4 of 6. Conformal prediction sets built by hand, fine print included.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 4 · Uncertainty you can promise - learn decision intelligence with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-decision-intelligence-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Decision Intelligence with Phoebe · Session 4 of 6</div>
+    <h1>Uncertainty you can <span class="accent">promise</span></h1>
+    <p class="sub">Sessions 2 and 3 trained the human: your 90 percent now means something because it was measured, and your forecasts anchor on base rates because the Brier ladder showed what that buys. Tonight the model side gets the same discipline. A churn score of "84%" deserves exactly the audit your colleague's "90% sure" got - and then something the human side cannot offer: a mathematical guarantee. Conformal prediction wraps any model in prediction sets that contain the truth at a rate you choose, with no distributional assumptions - and tonight you build one by hand, fine print included.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hands-on</span>
+      <span class="chip audience">Estimators with a measured calibration number</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-20 · From vibes to guarantees</span>
+      <span class="a3" style="flex:5">20-40 · Build-along: build a conformal set by hand</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where session 3 left you</h2>
+    </div>
+    <p class="lede">The memo's estimates section is no longer vibes: your intervals come from a calibrated estimator (session 2's lab measured you), and your probabilities anchor on base rates before updating on evidence (session 3's game scored it: coin flips 0.250, base-rate bot 0.171, you with evidence 0.155). That is the <strong>human</strong> side of uncertainty, disciplined. Tonight disciplines the <strong>model</strong> side: intervals a system can PROMISE - not feel, not usually manage, but guarantee at a rate you pick in advance.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> How to read a model's calibration curve the way session 2 read yours. The split-conformal recipe - four moves that wrap ANY pre-trained model in a guaranteed prediction set. And the fine print that makes the guarantee honest: what "90% coverage" does and does not promise, and why a drifted quarter voids it.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Two kinds of 90 percent<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>After tonight the memo can carry two different creatures that both say "90":</p>
+        <ul>
+          <li><strong>The human's trained 90</strong> (session 2): "my 90 percent intervals capture the truth about 90 percent of the time - measured, on my own scored history." Certified by a hit rate.</li>
+          <li><strong>The algorithm's guaranteed 90</strong> (tonight): "this prediction set contains the true label with 90 percent probability - guaranteed by construction, under stated conditions." Certified by a theorem.</li>
+        </ul>
+        <p>They are not interchangeable, and the memo should never let them blur: the human number covers one-off judgment calls no model scores; the guaranteed number covers repeated, model-scored predictions. The memo carries both - <strong>labeled</strong>, so the reader always knows which certificate stands behind which number.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Tonight's vocabulary<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Calibration curve</strong> - stated confidence on one axis, actual frequency on the other. The diagonal is honesty; session 2 drew yours, tonight draws the model's.</li>
+          <li><strong>Calibration set</strong> - labeled points the model never trained on, held out to price its errors.</li>
+          <li><strong>Nonconformity score</strong> - how "wrong" the model looks on one point, e.g. 1 minus the probability it gave the true label. High score = the truth surprised it.</li>
+          <li><strong>Coverage</strong> - how often the prediction set actually contains the truth. The thing being guaranteed.</li>
+          <li><strong>Exchangeability</strong> - the condition under which the guarantee holds: calibration data and new data behave like draws from the same well-shuffled deck. Distribution shift breaks it.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers calibration curves for models</span>
+      <h2>Audit the model like you audited yourself</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Session 2's lab bucketed YOUR stated confidence and plotted your actual hit rate. The exact same audit works on a model's probability outputs: bucket its predictions by stated confidence, plot the actual frequency in each bucket, and compare to the diagonal. On the diagonal, the model is calibrated. Churn models routinely are not - they run over- or under-confident, and nobody notices until the curve is drawn.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model calibration curve: the diagonal marks perfect calibration, and an overconfident model's curve sags below the diagonal at the high-confidence end, claiming 90 percent while delivering 74">
+        <style>
+          .d4aT { font: 700 13px Inter, sans-serif; fill: #111827; }
+          .d4aB { font: 400 12px Inter, sans-serif; fill: #111827; }
+          .d4aM { font: 700 12px Inter, sans-serif; fill: #86198F; }
+          .d4aD { font: 700 12px Inter, sans-serif; fill: #C026D3; }
+          .d4aA { font: 700 12px Inter, sans-serif; fill: #92400E; }
+          .d4aN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <text class="d4aT" x="110" y="40">The churn model's calibration curve - same audit as session 2, different estimator</text>
+        <line x1="110" y1="320" x2="800" y2="320" stroke="#6B7280" stroke-width="1.5"/>
+        <line x1="110" y1="60" x2="110" y2="320" stroke="#6B7280" stroke-width="1.5"/>
+        <text class="d4aN" x="110" y="342">0.5</text>
+        <text class="d4aN" x="378" y="342">0.7</text>
+        <text class="d4aN" x="654" y="342">0.9</text>
+        <text class="d4aN" x="788" y="342">1.0</text>
+        <text class="d4aN" x="60" y="324">0.5</text>
+        <text class="d4aN" x="60" y="220">0.7</text>
+        <text class="d4aN" x="36" y="116">0.9</text>
+        <text class="d4aN" x="440" y="372" text-anchor="middle">stated confidence (bucketed model outputs)</text>
+        <text class="d4aN" x="84" y="60" transform="rotate(-90 84 60)" text-anchor="end">actual frequency</text>
+        <line x1="110" y1="320" x2="800" y2="60" stroke="#C026D3" stroke-width="2" stroke-dasharray="7 5"/>
+        <text class="d4aD" x="700" y="88">perfectly calibrated</text>
+        <polyline points="110,315 248,278 386,252 524,216 662,195 731,185" fill="none" stroke="#701A75" stroke-width="2.5"/>
+        <circle cx="110" cy="315" r="4" fill="#701A75"/>
+        <circle cx="248" cy="278" r="4" fill="#701A75"/>
+        <circle cx="386" cy="252" r="4" fill="#701A75"/>
+        <circle cx="524" cy="216" r="4" fill="#701A75"/>
+        <circle cx="662" cy="195" r="5" fill="#701A75"/>
+        <circle cx="731" cy="185" r="4" fill="#701A75"/>
+        <text class="d4aM" x="330" y="290">the model, measured</text>
+        <line x1="662" y1="112" x2="662" y2="195" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
+        <rect x="430" y="120" width="216" height="46" rx="9" fill="#FFF7E6" stroke="#F59E0B"/>
+        <text class="d4aA" x="538" y="139" text-anchor="middle">reading the 0.9 bucket:</text>
+        <text class="d4aA" x="538" y="157" text-anchor="middle">model says 90%, reality delivers 74%</text>
+        <text class="d4aN" x="110" y="395">Sag below the diagonal = overconfidence: confidence the model claims but does not earn. Above = underconfidence.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - reading a model's calibration curve, bucket by bucket</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>How the audit works, and what it finds<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Three moves, all bookkeeping: take a batch of scored predictions with known outcomes, group them into confidence buckets (all the "about 80%" predictions together), and compute the actual positive rate inside each bucket. Plot stated against actual. A calibrated model sits on the diagonal; the sagging curve above shows the common failure - the high-confidence buckets are where overconfidence concentrates, exactly as it did in the human lab.</p>
+        <p>The connection to session 2 is the point: a model's "84% churn risk" is a confidence claim from an estimator, and it deserves the same audit a colleague's "90% sure" got. Nobody at Mango Lane had ever bucketed the churn model's outputs. The curve is an afternoon of work and it changes what the number is worth in the memo.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>Mango Lane's churn model flags a segment at "84% risk". Bucketed against last quarter's outcomes, the 80-90 bucket actually churned at 71%. The score is still useful - it ranks customers well - but the memo cannot write "84% probability" with a straight face. Tonight's second tool fixes that properly: instead of hoping the probabilities are honest, wrap them in a set that carries a guarantee.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why good models are often badly calibrated<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Ranking well and stating honest probabilities are different skills. A model can order customers from safest to riskiest almost perfectly while its stated probabilities run systematically hot or cold - training objectives reward separation, not honesty, and modern flexible models tend toward overconfidence at the extremes. Two practical consequences:</p>
+        <ul>
+          <li><strong>Never read a raw score as a probability</strong> until the calibration curve has been drawn on held-out data. The curve is the model's session-2 lab result.</li>
+          <li><strong>Calibration drifts.</strong> A curve drawn last year certifies last year. Re-audit on a cadence, and treat a sudden sag as an early warning that the world the model learned has moved - which is exactly the condition that voids tonight's guarantee too.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers conformal prediction</span>
+      <h2>The guarantee: distribution-free, by construction</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Calibration curves diagnose; conformal prediction certifies. Instead of trusting the model's probabilities, it outputs a prediction SET - possibly one label, possibly several - built so that the set contains the truth at a rate you chose in advance. The remarkable part is what it does NOT need: no assumptions about the data's distribution, no assumptions about the model.</p>
+
+    <div class="prompt-box good"><span class="label">Verbatim · Angelopoulos &amp; Bates 2021</span>Conformal prediction sets "are valid in a distribution-free sense: they possess explicit, non-asymptotic guarantees even without distributional assumptions or model assumptions." The method works "with any pre-trained model, such as a neural network, to produce sets that are guaranteed to contain the ground truth with a user-specified probability, such as 90%."</div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The split-conformal recipe as a four-step pipeline: hold out a calibration set, score nonconformity, take the ceil((n+1)(1-alpha))/n quantile of the sorted scores, and build the prediction set from every label under that threshold">
+        <style>
+          .d4bH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d4bW { font: 400 11px Inter, sans-serif; fill: #F0ABFC; }
+          .d4bK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d4bB { font: 400 11px Inter, sans-serif; fill: #6B7280; }
+          .d4bA { font: 700 12px Inter, sans-serif; fill: #92400E; }
+          .d4bT { font: 700 13px Inter, sans-serif; fill: #111827; }
+        </style>
+        <defs>
+          <marker id="d4Br" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <text class="d4bT" x="60" y="45">Split conformal: four moves on top of ANY pre-trained model</text>
+        <rect x="60" y="100" width="165" height="96" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d4bK" x="142" y="128" text-anchor="middle">1 · Hold out a</text>
+        <text class="d4bK" x="142" y="146" text-anchor="middle">calibration set</text>
+        <text class="d4bB" x="142" y="168" text-anchor="middle">n labeled points the</text>
+        <text class="d4bB" x="142" y="184" text-anchor="middle">model never trained on</text>
+        <line x1="225" y1="148" x2="253" y2="148" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d4Br)"/>
+        <rect x="257" y="100" width="165" height="96" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d4bK" x="339" y="128" text-anchor="middle">2 · Score each point</text>
+        <text class="d4bB" x="339" y="150" text-anchor="middle">nonconformity, e.g.</text>
+        <text class="d4bB" x="339" y="166" text-anchor="middle">1 - p(true label)</text>
+        <text class="d4bB" x="339" y="182" text-anchor="middle">high = truth surprised it</text>
+        <line x1="422" y1="148" x2="450" y2="148" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d4Br)"/>
+        <rect x="454" y="76" width="190" height="144" rx="12" fill="#701A75"/>
+        <text class="d4bH" x="549" y="106" text-anchor="middle">3 · Take the quantile</text>
+        <text class="d4bH" x="549" y="134" text-anchor="middle">ceil((n+1)(1-alpha)) / n</text>
+        <text class="d4bW" x="549" y="158" text-anchor="middle">of the sorted scores</text>
+        <text class="d4bW" x="549" y="180" text-anchor="middle">alpha = 0.1 for a</text>
+        <text class="d4bW" x="549" y="196" text-anchor="middle">90% coverage target</text>
+        <line x1="644" y1="148" x2="672" y2="148" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d4Br)"/>
+        <rect x="676" y="100" width="165" height="96" rx="12" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+        <text class="d4bK" x="758" y="128" text-anchor="middle">4 · Build the set</text>
+        <text class="d4bB" x="758" y="150" text-anchor="middle">every label whose score</text>
+        <text class="d4bB" x="758" y="166" text-anchor="middle">falls below the threshold</text>
+        <text class="d4bB" x="758" y="182" text-anchor="middle">goes in the set</text>
+        <rect x="60" y="248" width="781" height="50" rx="10" fill="#FFF7E6" stroke="#F59E0B" stroke-width="1.5"/>
+        <text class="d4bA" x="80" y="269">The fine print: the guarantee is MARGINAL - on average over exchangeable data, not per customer.</text>
+        <text class="d4bA" x="80" y="287">Distribution shift breaks exchangeability and voids the promise. A drifted quarter = renegotiate.</text>
+        <text class="d4bB" x="60" y="326">A few lines of code on top of any model - including the booster from the ensemble course. The math does the rest.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the split-conformal recipe, with the quantile step doing the guaranteeing</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The recipe in plain words<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Split conformal is four moves, and only one involves any math (paraphrasing the Angelopoulos-Bates tutorial):</p>
+        <ul>
+          <li><strong>Hold out a calibration set</strong> - labeled points the model never saw in training. This is the model's exam, not its homework.</li>
+          <li><strong>Compute a nonconformity score per calibration point</strong> - a number for how wrong the model looks there, e.g. 1 minus the probability it assigned the true label.</li>
+          <li><strong>Take the ceil((n+1)(1-alpha))/n empirical quantile</strong> of those scores - for 90% coverage, alpha is 0.1. This threshold is where the guarantee is manufactured: the (n+1) is a finite-sample correction, not a typo.</li>
+          <li><strong>Build the prediction set</strong> for a new customer: every candidate label whose score falls below the threshold goes in.</li>
+        </ul>
+        <p>That is the whole method - a few lines on top of ANY model, including the gradient booster you built in the ensemble course. Uncertain customers naturally get bigger sets, confident ones get singletons; the set SIZE becomes an honest per-customer uncertainty readout even though the guarantee itself is an average.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The fine print is content, not a footnote<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two conditions bound the promise, and the memo must carry both:</p>
+        <ul>
+          <li><strong>Marginal, not conditional.</strong> Coverage holds ON AVERAGE over exchangeable data - roughly 90% of customers get a set containing their truth. It is NOT a per-instance promise: no individual customer is personally guaranteed 90%, and coverage can run lower on some slices while the average still holds.</li>
+          <li><strong>Exchangeability, not forever.</strong> The theorem assumes calibration data and new data are exchangeable - same well-shuffled deck. Distribution shift breaks that: a drifted quarter voids the promise outright.</li>
+        </ul>
+        <p>The second condition is not a weakness to whisper - it is a reason to use session 1's machinery. The memo's flip-trigger should name it: "these sets are guaranteed under stable conditions; if the input distribution shifts materially, recalibrate before trusting them." A guarantee with stated conditions is a promise; one with hidden conditions is a liability.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers what the promise buys the memo</span>
+      <h2>Three grades of uncertainty, one labeled memo</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">The estimates section upgrades tonight. "The model's churn set contains the truth for 90% of customers, guaranteed under stable conditions" is a sentence a CFO can audit - every word in it is checkable. Compare the three grades of uncertainty the memo could carry, and notice each has a legitimate place; the sin is leaving them unlabeled.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three grades of uncertainty as an ascending ladder: vibes certified by nothing, a calibrated human interval certified by a measured hit rate, and a conformal set certified by a mathematical guarantee under stated conditions">
+        <style>
+          .d4cH { font: 700 12px Inter, sans-serif; fill: #fff; }
+          .d4cW { font: 400 11px Inter, sans-serif; fill: #F0ABFC; }
+          .d4cK { font: 700 12px Inter, sans-serif; fill: #111827; }
+          .d4cB { font: 400 11px Inter, sans-serif; fill: #111827; }
+          .d4cR { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+          .d4cA { font: 700 11px Inter, sans-serif; fill: #92400E; }
+          .d4cN { font: 400 12px Inter, sans-serif; fill: #6B7280; }
+        </style>
+        <defs>
+          <marker id="d4Cr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#D1D5DB"/></marker>
+        </defs>
+        <text class="d4cK" x="60" y="40" style="font-weight:700; font-size:13px">The uncertainty ladder: what certifies each rung</text>
+        <rect x="70" y="200" width="220" height="70" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="d4cR" x="180" y="228" text-anchor="middle">Grade 1 · vibes</text>
+        <text class="d4cB" x="180" y="250" text-anchor="middle">"this segment is high risk"</text>
+        <rect x="90" y="282" width="180" height="26" rx="13" fill="#FFF7E6" stroke="#F59E0B"/>
+        <text class="d4cA" x="180" y="299" text-anchor="middle">certified by: nothing</text>
+        <line x1="290" y1="215" x2="326" y2="185" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d4Cr)"/>
+        <rect x="330" y="130" width="220" height="70" rx="12" fill="#F0ABFC"/>
+        <text class="d4cK" x="440" y="158" text-anchor="middle">Grade 2 · calibrated interval</text>
+        <text class="d4cB" x="440" y="180" text-anchor="middle">human 90% interval, session 2</text>
+        <rect x="335" y="212" width="210" height="26" rx="13" fill="#FFF7E6" stroke="#F59E0B"/>
+        <text class="d4cA" x="440" y="229" text-anchor="middle">certified by: measured hit rate</text>
+        <line x1="550" y1="145" x2="586" y2="115" stroke="#D1D5DB" stroke-width="2" marker-end="url(#d4Cr)"/>
+        <rect x="590" y="60" width="230" height="70" rx="12" fill="#701A75"/>
+        <text class="d4cH" x="705" y="88" text-anchor="middle">Grade 3 · conformal set</text>
+        <text class="d4cW" x="705" y="110" text-anchor="middle">distribution-free coverage, tonight</text>
+        <rect x="580" y="142" width="250" height="26" rx="13" fill="#FFF7E6" stroke="#F59E0B"/>
+        <text class="d4cA" x="705" y="159" text-anchor="middle">certified by: mathematical guarantee*</text>
+        <text class="d4cN" x="580" y="190">*marginal, under exchangeability -</text>
+        <text class="d4cN" x="580" y="208">the conditions ride along in the memo</text>
+        <text class="d4cN" x="60" y="336">Each grade has a place. The memo's job is to LABEL which grade stands behind each number - never to let them blur.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the three grades of uncertainty and what certifies each rung</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Which grade goes where in the memo<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <tr><th>Grade</th><th>Belongs where</th><th>Memo phrasing</th></tr>
+          <tr><td><strong>Vibes</strong></td><td>Nowhere in the estimates section - at most, flagged as a hypothesis to be estimated</td><td>"Team intuition, unquantified - listed for context only"</td></tr>
+          <tr><td><strong>Calibrated human interval</strong></td><td>One-off judgment quantities no model scores: campaign uptake, deal size, a competitor's move</td><td>"90% interval from a calibrated estimator (hit rate on record)"</td></tr>
+          <tr><td><strong>Conformal set</strong></td><td>Repeated, model-scored predictions: churn, demand, ticket volume</td><td>"Set contains the truth for 90% of customers, guaranteed under stable conditions"</td></tr>
+        </table>
+        <p>The upgrade is auditability. A CFO cannot audit "high risk". They can audit a hit rate, and they can audit a coverage guarantee with stated conditions - which means the estimates section stops being a trust exercise and becomes a checkable document. That is what the promise buys.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Build a conformal set by hand</h2>
+      <span class="tag demo">★ 20 min · everyone builds</span>
+    </div>
+    <p class="lede">No library, no notebook - ten numbers and a pencil, because the quantile move is the entire method and doing it once by hand makes the guarantee stop being magic. Mango Lane's churn model, ten held-out customers, their nonconformity scores already computed (1 minus the model's probability on each customer's true label), already sorted: <strong>0.02, 0.05, 0.08, 0.11, 0.15, 0.19, 0.24, 0.31, 0.42, 0.55</strong>.</p>
+
+    <div class="steps">
+      <div class="step"><p><strong>Sort the calibration scores.</strong> Done for you above - ten scores, ascending. Each is one held-out customer: low score means the model gave the true label high probability (no surprise); 0.55 means the truth caught the model fairly flat-footed. The threshold you are about to pick comes from these ten exam results.</p></div>
+      <div class="step"><p><strong>Compute the quantile for 90% coverage at n = 10.</strong> The recipe says take the ceil((n+1)(1-alpha))/n quantile: ceil(11 x 0.9)/10 = ceil(9.9)/10 = 10/10 - the 100th percentile, meaning the 10th and largest value: <strong>threshold = 0.55</strong>. Feel the finite-sample bump: with only 10 points, the guarantee demands the MAXIMUM score as the threshold. Small calibration sets buy wide promises - the honesty tax on tiny n.</p></div>
+      <div class="step"><p><strong>Redo it at n = 19 and watch the tax shrink.</strong> ceil((19+1) x 0.9)/19 = ceil(18)/19 = 18/19 - the 18th of 19 sorted scores, comfortably below the maximum. Nine extra calibration points move the threshold off the worst case; a few hundred make it tight. Rule of thumb from the arithmetic: the calibration set is cheap coverage insurance - grow it.</p></div>
+      <div class="step"><p><strong>Apply the threshold to a new customer.</strong> A candidate label for tonight's new customer scores 0.30. At the n = 10 threshold of 0.55: 0.30 &lt; 0.55, so the label goes IN the prediction set. Now write the promise sentence exactly as the memo will carry it: "sets built this way contain the true label for 90% of customers, on average, under conditions exchangeable with calibration."</p></div>
+      <div class="step"><p><strong>Upgrade the memo's estimates section.</strong> Go row by row: campaign uptake and any one-off judgment number stays a <strong>calibrated human interval</strong> (session 2's grade, hit rate cited). Every repeated model-scored prediction - the churn calls feeding the voucher case - becomes a <strong>conformal set</strong> with the stable-conditions caveat attached in the same sentence, and the flip-trigger gains a line: "material input drift voids the coverage guarantee; recalibrate before acting on the sets."</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>What to bring to session 5.</strong> Your memo with estimates now graded and labeled. The last empty section but one is the information verdict - the team still wants that $5k segmentation study before deciding, and session 5 prices it with arithmetic instead of politics. Bring the study request; leave with a verdict.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 5</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Draw one real calibration curve</strong> - any scored model with known outcomes at work (churn, lead scoring, forecast). Bucket by stated confidence, plot actual frequency, note where it sags. Two sentences on what the worst bucket means for decisions built on it.</li>
+      <li><strong>Run the quantile arithmetic at three sizes</strong> - n = 10, 50, 500 for 90% coverage. Which sorted position becomes the threshold in each? Notice where the finite-sample bump stops hurting.</li>
+      <li><strong>Grade your memo's numbers</strong> - mark every estimate in your own memo as grade 1, 2, or 3. Any grade-1 number still sitting in the estimates section either gets an interval or gets demoted to "hypothesis".</li>
+      <li><strong>Write the shift clause</strong> - one sentence for your memo's flip-trigger naming what "material drift" means for your data and who re-checks calibration when it fires.</li>
+      <li><strong>Optional:</strong> skim the Angelopoulos &amp; Bates tutorial, "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification" (arXiv 2107.07511) - sections 1 and 2 cover everything tonight taught, with code.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · The memo says the churn sets are "guaranteed to contain the truth 90% of the time, distribution-free". What is that guarantee actually promising?</p>
+      <button class="qopt" type="button">A · Every individual customer's set has a personal 90% chance of containing their true label, in any conditions whatsoever</button>
+      <button class="qopt" type="button">B · Coverage of 90% on average over exchangeable data - marginal, not per-instance, with no distributional or model assumptions needed, but voided if distribution shift breaks exchangeability</button>
+      <button class="qopt" type="button">C · The model's probability outputs have been recalibrated to sit on the diagonal of the calibration curve</button>
+      <p class="qwhy">Distribution-free means no assumptions on the data's distribution or the model - not "no conditions at all". The guarantee is MARGINAL coverage under exchangeability: right on average, silent per instance, and void under shift - which is why the memo's flip-trigger names drift explicitly.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Ten sorted calibration scores, target coverage 90%. Which value becomes the threshold?</p>
+      <button class="qopt" type="button">A · The 10th and largest value, 0.55 - because ceil((10+1) x 0.9)/10 = ceil(9.9)/10 = 10/10, so tiny calibration sets force the maximum as the threshold</button>
+      <button class="qopt" type="button">B · The 9th value, 0.42 - because 90% of 10 is 9</button>
+      <button class="qopt" type="button">C · Interpolate between the 9th and 10th values to hit exactly the 0.90 point</button>
+      <p class="qwhy">The (n+1) finite-sample correction is the whole trick: ceil(11 x 0.9) = ceil(9.9) = 10, so at n = 10 the guarantee demands the max. That is not a flaw - it is the price of an honest promise from ten data points. At n = 19 the threshold relaxes to the 18th of 19; more calibration data buys tighter sets.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · The memo has three numbers: campaign uptake (a one-off judgment call), churn per customer (model-scored, repeated), and "the segment feels risky". Which uncertainty grade belongs to each?</p>
+      <button class="qopt" type="button">A · All three should become conformal sets - guarantees are strictly better, so upgrade everything</button>
+      <button class="qopt" type="button">B · All three are fine as calibrated human intervals now that the estimator passed session 2's lab</button>
+      <button class="qopt" type="button">C · Uptake gets a calibrated human interval (no model scores it), churn gets a conformal set with the stable-conditions caveat, and "feels risky" is grade-1 vibes - flagged as unquantified hypothesis or cut from the estimates</button>
+      <p class="qwhy">Conformal needs a model and repeated scored predictions - it cannot wrap a one-off judgment call, which is what the calibrated human stays for. The three grades coexist in one memo; the discipline is labeling which certificate stands behind which number, so a reader never mistakes a vibe for a guarantee.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Angelopoulos &amp; Bates, A Gentle Introduction to Conformal Prediction (arXiv 2107.07511)</span><span class="note">The distribution-free guarantee quoted verbatim; split-conformal recipe paraphrased from the tutorial - taught WITH its fine print: marginal coverage under exchangeability, not per-instance, voided by distribution shift</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Session 2's calibration lineage (Lichtenstein-Fischhoff-Phillips; Hubbard)</span><span class="note">Recalled tonight to frame the model-side audit - full citations and caveats live in session 2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Model calibration curves</span><span class="note">Standard reliability-diagram practice, presented as method rather than attributed finding; the worked churn buckets are Mango Lane course fiction</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map with every URL and every honesty caveat: <span class="mono">materials/official-course-map.md</span> in this repo.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Two kinds of 90</b><span>The human's trained 90 (hit rate) and the algorithm's guaranteed 90 (theorem). The memo carries both - labeled.</span></div>
+      <div class="cheat-item"><b>The model audit</b><span>Bucket predictions by stated confidence, plot actual frequency. Sag below the diagonal = overconfidence, same as the human lab.</span></div>
+      <div class="cheat-item"><b>The guarantee</b><span>Distribution-free, non-asymptotic, any pre-trained model: sets contain the truth at your chosen rate - under exchangeability.</span></div>
+      <div class="cheat-item"><b>The recipe</b><span>Hold out calibration data · score nonconformity · take the ceil((n+1)(1-alpha))/n quantile · set = every label under it.</span></div>
+      <div class="cheat-item"><b>The small-n bump</b><span>n = 10 at 90% forces the MAX as threshold (10/10); n = 19 relaxes to 18/19. Grow the calibration set - it is cheap insurance.</span></div>
+      <div class="cheat-item"><b>The fine print</b><span>Marginal, not per-instance; shift voids it. Name the conditions in the memo's flip-trigger - a promise with hidden conditions is a liability.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The memo has one loud gap left: the team wants a $5k segmentation study before deciding the $12k voucher question, and so far the argument for it is entirely political. Session 5 prices it - a 1966 formula puts a hard ceiling on what ANY study is worth to THIS decision, the live calculator computes it for the voucher case, and the answer will surprise the people asking. Information has a price; bring the study request.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-decision-intelligence-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="03-superforecasting-habits.html">← Prev: Superforecasting habits</a> &nbsp;·&nbsp; <a href="../index.html">All sessions</a> &nbsp;·&nbsp; <a href="05-value-of-information.html">Next: Value of information →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
